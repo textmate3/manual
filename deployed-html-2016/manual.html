@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>TextMate Manual</title>
+	<link type="text/css" rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="ribbon-wrapper-green"><div class="ribbon-green">DRAFT</div></div>
+<div class="toc">
+
+<ul>
+<li>1 <a href="opening-files.html#opening-files">Opening Files</a>
+
+<ul>
+<li>1.1 <a href="opening-files.html#folders-as-projects">Folders as Projects</a></li>
+<li>1.2 <a href="opening-files.html#open-quickly">Open Quickly</a>
+
+<ul>
+<li>1.2.1 <a href="opening-files.html#filter-string">Filter String</a></li>
+<li>1.2.2 <a href="opening-files.html#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li>1.2.3 <a href="opening-files.html#customization">Customization</a></li>
+</ul></li>
+<li>1.3 <a href="opening-files.html#related-files">Related Files</a></li>
+<li>1.4 <a href="opening-files.html#mate"><code>mate</code></a>
+
+<ul>
+<li>1.4.1 <a href="opening-files.html#editing-with-sudo">Editing With <code>sudo</code></a></li>
+<li>1.4.2 <a href="opening-files.html#setting-and-clearing-marks">Setting and Clearing Marks</a></li>
+<li>1.4.3 <a href="opening-files.html#calling-mate-from-commands">Calling <code>mate</code> from Commands</a></li>
+<li>1.4.4 <a href="opening-files.html#shell-variables">Shell Variables</a>
+
+<ul>
+<li>1.4.4.1 <a href="opening-files.html#editor"><code>EDITOR</code></a></li>
+<li>1.4.4.2 <a href="opening-files.html#git_editor"><code>GIT_EDITOR</code></a></li>
+<li>1.4.4.3 <a href="opening-files.html#texedit"><code>TEXEDIT</code></a></li>
+<li>1.4.4.4 <a href="opening-files.html#lessedit"><code>LESSEDIT</code></a></li>
+</ul></li>
+</ul></li>
+<li>1.5 <a href="opening-files.html#rmate"><code>rmate</code></a></li>
+<li>1.6 <a href="opening-files.html#url-scheme">URL Scheme</a></li>
+<li>1.7 <a href="opening-files.html#binary-files">Binary Files</a></li>
+</ul></li>
+<li>2 <a href="projects.html#projects">Projects</a>
+
+<ul>
+<li>2.1 <a href="projects.html#project-folder">Project Folder</a></li>
+<li>2.2 <a href="projects.html#window-title">Window Title</a></li>
+<li>2.3 <a href="projects.html#tabs">Tabs</a>
+
+<ul>
+<li>2.3.1 <a href="projects.html#creating-tabs">Creating Tabs</a>
+
+<ul>
+<li>2.3.1.1 <a href="projects.html#default-file-type-for-new-tabs">Default File Type for New Tabs</a></li>
+</ul></li>
+<li>2.3.2 <a href="projects.html#closing-tabs">Closing Tabs</a></li>
+</ul></li>
+<li>2.4 <a href="projects.html#file-browser">File Browser</a>
+
+<ul>
+<li>2.4.1 <a href="projects.html#location-and-selections">Location and Selections</a></li>
+<li>2.4.2 <a href="projects.html#drag-and-drop">Drag and Drop</a></li>
+<li>2.4.3 <a href="projects.html#keyboard-usage">Keyboard Usage</a></li>
+<li>2.4.4 <a href="projects.html#effective-folder">Effective Folder</a></li>
+<li>2.4.5 <a href="projects.html#custom-commands">Custom Commands</a></li>
+</ul></li>
+</ul></li>
+<li>3 <a href="version-control.html#version-control">Version Control</a></li>
+<li>4 <a href="searching.html#searching">Searching</a>
+
+<ul>
+<li>4.1 <a href="searching.html#folder-search">Folder Search</a></li>
+<li>4.2 <a href="searching.html#search-results">Search Results</a></li>
+<li>4.3 <a href="searching.html#replacing">Replacing</a></li>
+<li>4.4 <a href="searching.html#search-clipboard">Search Clipboard</a></li>
+<li>4.5 <a href="searching.html#search-options">Search Options</a></li>
+<li>4.6 <a href="searching.html#incremental-search">Incremental Search</a></li>
+</ul></li>
+<li>5 <a href="text-editing.html#text-editing">Text Editing</a>
+
+<ul>
+<li>5.1 <a href="text-editing.html#navigation">Navigation</a>
+
+<ul>
+<li>5.1.1 <a href="text-editing.html#word-movement">Word Movement</a></li>
+<li>5.1.2 <a href="text-editing.html#sub-word-movement">Sub-word Movement</a></li>
+<li>5.1.3 <a href="text-editing.html#column-movement">Column Movement</a></li>
+<li>5.1.4 <a href="text-editing.html#paired-character-movement">Paired Character Movement</a></li>
+<li>5.1.5 <a href="text-editing.html#bookmarks">Bookmarks</a></li>
+<li>5.1.6 <a href="text-editing.html#symbol-chooser">Symbol Chooser</a></li>
+<li>5.1.7 <a href="text-editing.html#freehanded-movement">Freehanded Movement</a></li>
+</ul></li>
+<li>5.2 <a href="text-editing.html#selection">Selection</a>
+
+<ul>
+<li>5.2.1 <a href="text-editing.html#unanchored-selection">Unanchored Selection</a></li>
+<li>5.2.2 <a href="text-editing.html#unit-selections">Unit Selections</a></li>
+<li>5.2.3 <a href="text-editing.html#column-selection">Column Selection</a></li>
+<li>5.2.4 <a href="text-editing.html#wrapping-selection">Wrapping Selection</a></li>
+<li>5.2.5 <a href="text-editing.html#indenting-selection">Indenting Selection</a></li>
+<li>5.2.6 <a href="text-editing.html#moving-selection">Moving Selection</a></li>
+</ul></li>
+<li>5.3 <a href="text-editing.html#multiple-carets">Multiple Carets</a></li>
+<li>5.4 <a href="text-editing.html#cut-copy-and-paste">Cut, Copy, and Paste</a></li>
+<li>5.5 <a href="text-editing.html#buffer-completion">Buffer Completion</a></li>
+<li>5.6 <a href="text-editing.html#macros">Macros</a></li>
+<li>5.7 <a href="text-editing.html#auto-indenting-text">Auto-indenting Text</a></li>
+<li>5.8 <a href="text-editing.html#transposing-text">Transposing Text</a></li>
+<li>5.9 <a href="text-editing.html#spell-checking">Spell Checking</a></li>
+<li>5.10 <a href="text-editing.html#shell-command-filters">Shell Command Filters</a></li>
+<li>5.11 <a href="text-editing.html#dropping-items">Dropping Items</a></li>
+</ul></li>
+<li>6 <a href="snippets.html#snippets">Snippets</a>
+
+<ul>
+<li>6.1 <a href="snippets.html#grammar">Grammar</a></li>
+<li>6.2 <a href="snippets.html#plain-text">Plain Text</a></li>
+<li>6.3 <a href="snippets.html#variables">Variables</a></li>
+<li>6.4 <a href="snippets.html#interpolated-shell-code">Interpolated Shell Code</a></li>
+<li>6.5 <a href="snippets.html#tab-stops">Tab Stops</a></li>
+<li>6.6 <a href="snippets.html#placeholders">Placeholders</a></li>
+<li>6.7 <a href="snippets.html#mirrors">Mirrors</a></li>
+<li>6.8 <a href="snippets.html#transformations">Transformations</a></li>
+<li>6.9 <a href="snippets.html#multiple-choices">Multiple Choices</a></li>
+</ul></li>
+<li>7 <a href="commands.html#commands">Commands</a>
+
+<ul>
+<li>7.1 <a href="commands.html#search-path">Search Path</a>
+
+<ul>
+<li>7.1.1 <a href="commands.html#required-commands">Required Commands</a></li>
+</ul></li>
+<li>7.2 <a href="commands.html#drag-commands">Drag Commands</a></li>
+<li>7.3 <a href="commands.html#writing-commands">Writing Commands</a>
+
+<ul>
+<li>7.3.1 <a href="commands.html#executor-commands">Executor Commands</a></li>
+</ul></li>
+</ul></li>
+<li>8 <a href="html-output.html#html-output">HTML Output</a>
+
+<ul>
+<li>8.1 <a href="html-output.html#html-output-theme">HTML Output Theme</a></li>
+<li>8.2 <a href="html-output.html#javascript-api">JavaScript API</a>
+
+<ul>
+<li>8.2.1 <a href="html-output.html#textmatesystem">TextMate.system()</a></li>
+<li>8.2.2 <a href="html-output.html#synchronous-operation">Synchronous Operation</a></li>
+<li>8.2.3 <a href="html-output.html#asynchronous-operation">Asynchronous Operation</a></li>
+</ul></li>
+</ul></li>
+<li>9 <a href="showing-dialogs.html#showing-dialogs">Showing Dialogs</a>
+
+<ul>
+<li>9.1 <a href="showing-dialogs.html#dialog">Dialog</a></li>
+<li>9.2 <a href="showing-dialogs.html#commit-window">Commit Window</a></li>
+</ul></li>
+<li>10 <a href="printing.html#printing">Printing</a>
+
+<ul>
+<li>10.1 <a href="printing.html#printing-plain-text">Printing Plain Text</a></li>
+<li>10.2 <a href="printing.html#printing-processed-output">Printing Processed Output</a></li>
+</ul></li>
+<li>11 <a href="saving-files.html#saving-files">Saving Files</a></li>
+<li>12 <a href="bundles.html#bundles">Bundles</a>
+
+<ul>
+<li>12.1 <a href="bundles.html#finding-bundle-items">Finding Bundle Items</a></li>
+<li>12.2 <a href="bundles.html#general-actions">General Actions</a></li>
+<li>12.3 <a href="bundles.html#source-actions">Source Actions</a></li>
+<li>12.4 <a href="bundles.html#bundle-editor">Bundle Editor</a></li>
+<li>12.5 <a href="bundles.html#tab-trigger">Tab Trigger</a></li>
+<li>12.6 <a href="bundles.html#key-equivalent">Key Equivalent</a></li>
+<li>12.7 <a href="bundles.html#requirements">Requirements</a>
+
+<ul>
+<li>12.7.1 <a href="bundles.html#examples">Examples</a></li>
+</ul></li>
+</ul></li>
+<li>13 <a href="presentation.html#presentation">Presentation</a></li>
+<li>14 <a href="language-grammars.html#language-grammars">Language Grammars</a>
+
+<ul>
+<li>14.1 <a href="language-grammars.html#injected-grammars">Injected Grammars</a></li>
+<li>14.2 <a href="language-grammars.html#file-type-detection">File Type Detection</a></li>
+</ul></li>
+<li>15 <a href="scopes.html#scopes">Scopes</a>
+
+<ul>
+<li>15.1 <a href="scopes.html#attribute-scope">Attribute Scope</a></li>
+<li>15.2 <a href="scopes.html#dynamic-scope">Dynamic Scope</a></li>
+</ul></li>
+<li>16 <a href="variables.html#variables">Variables</a>
+
+<ul>
+<li>16.1 <a href="variables.html#static-variables">Static Variables</a></li>
+<li>16.2 <a href="variables.html#file-variables">File Variables</a></li>
+<li>16.3 <a href="variables.html#scope-variables">Scope Variables</a></li>
+<li>16.4 <a href="variables.html#dynamic-variables">Dynamic Variables</a></li>
+</ul></li>
+<li>17 <a href="settings.html#settings">Settings</a>
+
+<ul>
+<li>17.1 <a href="settings.html#file-settings">File Settings</a>
+
+<ul>
+<li>17.1.1 <a href="settings.html#filtering-files">Filtering Files</a></li>
+</ul></li>
+<li>17.2 <a href="settings.html#scope-settings">Scope Settings</a></li>
+<li>17.3 <a href="settings.html#hidden-settings">Hidden Settings</a></li>
+<li>17.4 <a href="settings.html#key-bindings">Key Bindings</a></li>
+</ul></li>
+<li>18 <a href="concepts.html#concepts">Concepts</a>
+
+<ul>
+<li>18.1 <a href="concepts.html#proxy-item">Proxy Item</a></li>
+<li>18.2 <a href="concepts.html#semantic-class">Semantic Class</a></li>
+<li>18.3 <a href="concepts.html#encoding">Encoding</a></li>
+</ul></li>
+<li>19 <a href="references.html#references">References</a>
+
+<ul>
+<li>19.1 <a href="references.html#scope-selector">Scope Selector</a></li>
+<li>19.2 <a href="references.html#format-string">Format String</a></li>
+<li>19.3 <a href="references.html#glob-string">Glob String</a></li>
+<li>19.4 <a href="references.html#selection-string">Selection String</a></li>
+<li>19.5 <a href="references.html#modified-property-list">Modified Property List</a></li>
+<li>19.6 <a href="references.html#regular-expression">Regular Expression</a></li>
+</ul></li>
+<li>20 <a href="updating.html#updating">Updating</a></li>
+</ul>
+</div>
+<section>
+
+<h1 id="opening-files">1 Opening Files</h1>
+
+<p>TextMate supports the normal ways of opening documents, that is, dragging them to the TextMate application icon or opening document types set to open with TextMate.</p>
+
+<p>But because opening documents is such a frequent action, and Finder is not always the most efficient interface for this, there is a plethora of other ways to open documents which will be described in this chapter.</p>
+
+<p>Last section will explain how to open binary files, such as gzipped documents or binary property lists.</p>
+
+<h2 id="folders-as-projects">1.1 Folders as Projects</h2>
+
+<p>When working with multiple related documents, things will be a lot easier if you start by opening the containing folder.</p>
+
+<p>In this manual we commonly refer to such enclosing folder as the projet folder, or simply a project. Next chapter has more info about working with projects.</p>
+
+<p>The project folder can be opened via the usual means, e.g. <em>File → Open…</em> (<kbd class='keyEquivalent'>⌘O</kbd>), executing <code>mate .</code> in your terminal (to open current folder as a project), dragging a folder to the TextMate application icon, etc.</p>
+
+<p>However, you may find that your project folders are not getting added to the <em>File → Open Recent</em> submenu. Instead you can use <em>File → Open Recent Project…</em> (<kbd class='keyEquivalent'>⇧⌘O</kbd>).</p>
+
+<p>This will show you a list of recent folders that has been opened in TextMate where you can quickly select what to open by using the normal navigation keys or start typing to filter the list. The dialog supports multi-selection (either by shift-clicking items or holding shift when pressing arrow up/down).</p>
+
+<p>Should the list contain unwanted items, these can be removed by either pressing delete (<kbd class='keyEquivalent'>⌫</kbd>) or clicking the remove button.</p>
+
+<p>The dialog also has a section for favorites. You can navigate between sections using <em>Window → Select Next Tab</em> (<kbd class='keyEquivalent'>⌘}</kbd>) and <em>Window → Select Previous Tab</em> (<kbd class='keyEquivalent'>⌘{</kbd>), or you can use the mouse to click the desired section label.</p>
+
+<p>The favorites section show the contents of <code>~/Library/Application Support/TextMate/Favorites</code> where it looks for symbolic links to your most used documents and folders.</p>
+
+<p>Such links can be created from the <a href="projects.html#file-browser">file browser</a>’s action menu or manually in a terminal.</p>
+
+<p>It is possible to add the contents of a folder to your favorites, instead of the folder itself.</p>
+
+<p>For example if you keep all your projects under <code>~/projects</code> then you can create a symbolic link in a terminal with <code>[DIR]</code> as prefix like this:</p>
+
+<pre><code>ln -s ~/projects &quot;$HOME/Library/Application Support/TextMate/Favorites/[DIR] Projects&quot;
+</code></pre>
+
+<p>After this, you should see a list of your projects when selecting Favorites.</p>
+
+<h2 id="open-quickly">1.2 Open Quickly</h2>
+
+<p>The easiest and most powerful way to open and switch between documents is by using <em>File → Open Quickly…</em> (<kbd class='keyEquivalent'>⌘T</kbd>).</p>
+
+<p>The list of documents in this window is sorted according to last use, with the most recently used (excluding current document) at the top, meaning that pressing return (<kbd class='keyEquivalent'>↩</kbd>) is a useful shortcut for “switch back to previous document”.</p>
+
+<h3 id="filter-string">1.2.1 Filter String</h3>
+
+<p>The list can be filtered by entering a filter string. This string will try to match abbreviations as well as subsets, and will rank matches according to how “good” a match they are. For example a filter string of <code>otv</code> will both match <code>OakTabBarView.mm</code> and <code>OakTextView.mm</code>, but since the latter has each of its capitals matched, this one is considered the better match. Likewise a filter string of <code>text</code> matches both <code>test-fixtures</code> and <code>text-view</code>, but for the latter, it fully matches a single subset and is even matching from the beginning of the name, so this one is the better match.</p>
+
+<p>By default the filter string is applied to the full path, for example <code>srcotv</code> will match <code>/path/to/src/OakTextView.mm</code>, but you can include slashes (<code>/</code>) in the filter string to make this more explicit.</p>
+
+<p>If the filter string contains an asterisk (<code>*</code>) then it is treated as a <a href="references.html#glob-string">glob string</a> instead. For example <code>*.md</code> will match all documents with a <code>.md</code> extension.</p>
+
+<p>If the filter string contains a colon (<code>:</code>) and what comes after the colon is a valid <a href="references.html#selection-string">selection string</a> then when selecting a file, TextMate will also jump to the location described by this selection string.</p>
+
+<p>For example <code>otv:32</code> will jump to line 32 of the selected document.</p>
+
+<p>When you open the Open Quickly dialog then TextMate will check if your search clipboard contains a string of the form <code>«file»:«line»</code>. If it does, this is used as the default filter string.</p>
+
+<p>The use case for this is when you see output in your terminal of the form:</p>
+
+<pre><code>src/OakTextView.mm:325: error: use of undeclared identifier 'foo'
+</code></pre>
+
+<p>If you want to jump to this error in TextMate, select the filename including line number and invoke <em>Edit → Find → Use Selection for Find</em> (<kbd class='keyEquivalent'>⌘E</kbd>) (an action found in majority of macOS applications). Now switch to TextMate and select <em>File → Open Quickly…</em> (<kbd class='keyEquivalent'>⌘T</kbd>) followed by return (<kbd class='keyEquivalent'>↩</kbd>).</p>
+
+<h3 id="keyboard-shortcuts">1.2.2 Keyboard Shortcuts</h3>
+
+<p>Pressing option-return (<kbd class='keyEquivalent'>⌥↩</kbd>) to open a document will make TextMate close all other (non-sticky) documents first.</p>
+
+<p>Holding down shift when using arrow keys will allow you to select multiple documents.</p>
+
+<p>Switching between sources (All, Open Files, and Uncommitted Changes) can be done using the actions in the Windows menu for switching tabs.</p>
+
+<p>That is <kbd class='keyEquivalent'>⌘1</kbd>-<kbd class='keyEquivalent'>⌘n</kbd> to select the n’th source, or <kbd class='keyEquivalent'>⌘{</kbd> and <kbd class='keyEquivalent'>⌘}</kbd> to selection previous/next source.</p>
+
+<p>While the dialog is showing, it is possible to use <em>File Browser → Enclosing Folder</em> (<kbd class='keyEquivalent'>⌘↑</kbd>) to get a listing for the parent folder.</p>
+
+<h3 id="customization">1.2.3 Customization</h3>
+
+<p>The following keys can be set via the <a href="">properties system</a>:</p>
+
+<ul>
+<li><code>followSymbolicLinks</code>: By default symbolic links to folders are not followed. If this key is set to <code>true</code> then you will see the contents of these folders.</li>
+</ul>
+
+<p>In addition to the general <a href="">filtering settings</a> you can set these keys to specifically target the Open Quickly dialog:</p>
+
+<ul>
+<li><code>includeInFileChooser</code></li>
+<li><code>excludeInFileChooser</code></li>
+<li><code>includeFilesInFileChooser</code></li>
+<li><code>excludeFilesInFileChooser</code></li>
+<li><code>excludeDirectoriesInFileChooser</code></li>
+</ul>
+
+<h2 id="related-files">1.3 Related Files</h2>
+
+<p>In some languages it is common to have a header and implementation file sharing the same base name, for example <code>foo.c</code> and <code>foo.h</code>.</p>
+
+<p>TextMate allows you to cycle through files with the same base name using <em>Navigation → Go to Related File</em> (<kbd class='keyEquivalent'>⌥⌘↑</kbd>).</p>
+
+<p>In languages that does not work with headers, you may want to repurpose this feature for switching between a controller and its view, or an implementation file and its test file.</p>
+
+<p>This can be done by setting the <code>relatedFilePath</code> <a href="">properties key</a> to the file that is related to the current one.</p>
+
+<p>For example in <a href="https://golang.org/">Go</a> the convention is to append <code>_test</code> to the basename for test files, which means for regular files (<code>*.go</code>) we want to add <code>_test</code>, and for test files (<code>*_test.go</code>), we want to remove it.</p>
+
+<p>This can be achieved with the following setting:</p>
+
+<pre><code>[ *.go ]
+relatedFilePath = &quot;${TM_FILEPATH/(_test)?\.go$/${1:?:_test}.go/}&quot;
+</code></pre>
+
+<p>This setting targets both test and non-test files, then we set <code>relatedFilePath</code> to the current file path with a substitution that optionally matches the <code>_test</code> part, and if it was matched, we replace it with nothing, otherwise we insert it.</p>
+
+<p>A more explicit setting could be the following:</p>
+
+<pre><code>[ *.go~*_test.go ]
+relatedFilePath = &quot;${TM_FILEPATH/\.go$/_test.go/}&quot;
+
+[ *_test.go ]
+relatedFilePath = &quot;${TM_FILEPATH/_test\.go$/.go/}&quot;
+</code></pre>
+
+<p>The first glob uses <code>~</code> to exclude test files from matching.</p>
+
+<h2 id="mate">1.4 <code>mate</code></h2>
+
+<p>TextMate comes with its own <code>mate</code> shell command, which can be installed from the Terminal page in Preferences.</p>
+
+<p>After installation you can run <code>mate -h</code> in a terminal which should show the version number and the following usage instructions:</p>
+
+<pre><code>mate 2.12 (2016-12-12)
+Usage: mate [-wl&lt;selection&gt;t&lt;filetype&gt;m&lt;name&gt;rehv] [-u&lt;identifier&gt; | file ...]
+       mate [-c&lt;mark&gt;] -s&lt;mark&gt;:&lt;value&gt; -l&lt;line&gt; [-u&lt;identifier&gt; | file ...]
+       mate -c&lt;mark&gt; [-l&lt;line&gt;] [-u&lt;identifier&gt; | file ...]
+
+Options:
+ -w, --[no-]wait                 Wait for file to be closed by TextMate.
+ -l, --line &lt;selection&gt;          Setup &lt;selection&gt; after loading file.
+ -t, --type &lt;filetype&gt;           Treat file as having &lt;filetype&gt;.
+ -m, --name &lt;name&gt;               The display name shown in TextMate.
+ -r, --[no-]recent               Add file to Open Recent menu.
+ -u, --uuid &lt;identifier&gt;         Reference already open document with
+                                 &lt;identifier&gt;.
+ -e, --[no-]escapes              Set this to preserve ANSI escapes from stdin.
+ -s, --set-mark &lt;mark&gt;[:&lt;value&gt;] Set a mark with optional &lt;value&gt; (requires --line).
+ -c, --clear-mark &lt;mark&gt;         Clear a mark (clears all marks without --line).
+ -h, --help                      Show this information.
+ -v, --version                   Print version information.
+
+Files opened via mate are added to the recent menu unless
+the file starts with a period, --wait or --no-recent is
+specified, or the file is in the system’s temporary directory.
+
+By default mate will wait for files to be closed if the command name
+has a &quot;_wait&quot; suffix (e.g. via a symbolic link) or when used as a
+filter like in this examples:
+
+    ls *.tex|mate|sh    -w implied
+    mate -|cat -n       -w implied (read from stdin)
+
+The -l/--line option requires a selection in the following format:
+
+    selection    = &lt;range&gt; ('&amp;' &lt;range&gt;)*
+    range        = &lt;pos&gt; | &lt;normal_range&gt; | &lt;column_range&gt;
+    pos          = &lt;line&gt; (':' &lt;column&gt;)? ('+' &lt;offset&gt;)?
+    normal_range = &lt;pos&gt; '-' &lt;pos&gt;
+    column_range = &lt;pos&gt; 'x' &lt;pos&gt;
+    line         = [1-9][0-9]*
+    column       = [1-9][0-9]*
+    offset       = [1-9][0-9]*
+</code></pre>
+
+<h3 id="editing-with-sudo">1.4.1 Editing With <code>sudo</code></h3>
+
+<p>The <code>mate</code> shell command supports being called via <code>sudo</code> and will pass the authorization to TextMate.</p>
+
+<p>So if you run <code>mate /etc/hosts</code> and save, TextMate will ask you for admin credentials.</p>
+
+<p>But if you instead run <code>sudo mate /etc/hosts</code> you will be asked for password in the terminal, and TextMate will be able to save your file without prompting you for admin credentials.</p>
+
+<p>Which you prefer is a matter of personal preference, the main advantage of <code>sudo</code> is that (depending on your settings) the authorization is cached for your current user, so after entering your password, you can continue to use <code>sudo</code> to edit files without needing to re-type your password, where TextMate will associate the authorization with the current document, and will drop it once the document is closed.</p>
+
+<h3 id="setting-and-clearing-marks">1.4.2 Setting and Clearing Marks</h3>
+
+<p>In addition to opening files, the <code>mate</code> command allows you to set and clear gutter marks.</p>
+
+<p>Such marks can be used to decorate lines with warning or error icons, indicate that a line has been changed since last commit, the mark can be a color square showing what color is defined in the line’s CSS, etc.</p>
+
+<p>To set a mark you call <code>mate --set-mark &lt;mark&gt;[:&lt;value&gt;]</code> where <code>&lt;mark&gt;</code> should be a path to the image you want to use for the mark.</p>
+
+<p>If the mark’s basename ends with <code>Template</code> then it is treated as a monochrome image that is rendered in the proper theme color.</p>
+
+<p>If you provide <code>&lt;value&gt;</code> then this text is shown to the user when clicking the mark.</p>
+
+<p>We recommend using the PDF format for scalable images.</p>
+
+<p>As an example, if you have <code>Robot Template.pdf</code> in your bundle’s support folder then you can set a mark on line 180 with associated text using the following line of shell code:</p>
+
+<pre><code>&quot;$TM_MATE&quot; --line=&quot;180&quot; --set-mark=&quot;$TM_BUNDLE_SUPPORT/Robot Template.pdf:Danger, Will Robinson!&quot;
+</code></pre>
+
+<p>In this example the mark will be set for the current document, this is because if we do not specify any file path then <code>mate</code> will read the value of the <code>TM_DOCUMENT_UUID</code> environment variable and use that as the default value for <code>--uuid</code>.</p>
+
+<p>To make that explicit, we could have added <code>--uuid=&quot;$TM_DOCUMENT_UUID&quot;</code>.</p>
+
+<p>If your <code>&lt;mark&gt;</code> does not start with a slash (<code>/</code>) then TextMate will expect it to be the name of one of the built-in images. Currently these four built-in images exist: <code>error</code>, <code>warning</code>, <code>note</code>, and <code>search</code>.</p>
+
+<p>To clear a mark you use <code>--clear-mark</code> with the mark you wish to clear, for example:</p>
+
+<pre><code>&quot;$TM_MATE&quot; --clear-mark=&quot;$TM_BUNDLE_SUPPORT/Robot Template.pdf&quot;
+</code></pre>
+
+<p>In the above there is no document or line reference, so all marks of this type will be cleared for all lines in all documents. Specify document and/or line to limit what gets cleared.</p>
+
+<p>If the mark given to <code>--clear-mark</code> has a trailing slash (<code>/</code>) then all marks with this prefix gets cleared, for example if you have multiple marks in your bundle’s support folder and wish to clear them all in one go then use:</p>
+
+<pre><code>&quot;$TM_MATE&quot; --clear-mark=&quot;$TM_BUNDLE_SUPPORT/&quot;
+</code></pre>
+
+<p>Lastly when you wish to update marks, it is recommended to call <code>mate</code> with both <code>--clear-mark</code> and <code>--set-mark</code>, as that avoids potential flicker when setting a mark for a line that already has one.</p>
+
+<h3 id="calling-mate-from-commands">1.4.3 Calling <code>mate</code> from Commands</h3>
+
+<p>If you are writing a TextMate command then the <code>TM_MATE</code> environment variable is setup to point to <code>mate</code>, so always use this variable instead of <code>mate</code> directly.</p>
+
+<p>For example if you want to put an error icon on line 180 of the current file then it can be done using something like the following:</p>
+
+<pre><code>&quot;$TM_MATE&quot; --set-mark=&quot;error:Deprecated syntax.&quot; --line=180
+</code></pre>
+
+<h3 id="shell-variables">1.4.4 Shell Variables</h3>
+
+<p>After having installed <code>mate</code> you may want to setup a few shell variables described in the following subsections.</p>
+
+<h4 id="editor">1.4.4.1 <code>EDITOR</code></h4>
+
+<p>The <code>EDITOR</code> variable is used by most shell commands that require an external editor. Since these commands expect a synchronous editor, you should include the <code>-w</code> flag when setting this variable. For example (<code>~/.profile</code>):</p>
+
+<pre><code>export EDITOR='mate -w'
+</code></pre>
+
+<p>Currently <code>crontab</code> does not treat <code>EDITOR</code> as a “shell string” making it not possible to provide arguments to <code>mate</code>. If you need to use TextMate to edit your cron then you can create a symbolic link to <code>mate</code> with a <code>_wait</code>. For example:</p>
+
+<pre><code>ln -s mate ~/bin/mate_wait   # run this once to create the link
+export EDITOR='mate_wait'    # use in your ~/.profile or similar
+</code></pre>
+
+<h4 id="git_editor">1.4.4.2 <code>GIT_EDITOR</code></h4>
+
+<p>When you commit to a <a href="http://git.or.cz/" title="Git - Version Control System">Git</a> repository you may find that your caret is not at the first line.</p>
+
+<p>This is because Git reuses the same file for each new commit message and TextMate reads caret position from the file’s extended attributes, so if the file was saved with the caret placed in the middle of the file, the next time you write a commit message, the caret will be restored to this position.</p>
+
+<p>Recent versions of TextMate has disabled creation of extended attributes for Git commit messages, but it will still read them, so if you have old repositories and you do not want to manually remove the extended attributes for <code>.git/COMMIT_EDITMSG</code> then you can instead set the Git editor to <code>mate -wl1</code>. This instructs TextMate to open with the caret at line 1 rather than where it was last placed.</p>
+
+<p>To set it like this for Git, you can set the <code>GIT_EDITOR</code> variable or Git’s <code>core.editor</code> configuration variable.</p>
+
+<h4 id="texedit">1.4.4.3 <code>TEXEDIT</code></h4>
+
+<p>When TeX gives an error message with a file reference, you can enter <code>e</code> to edit the file (and correct the error).</p>
+
+<p>For this to work with <code>mate</code>, set the <code>TEXEDIT</code> variable like this:</p>
+
+<pre><code>export TEXEDIT='mate -w -l %d &quot;%s&quot;'
+</code></pre>
+
+<h4 id="lessedit">1.4.4.4 <code>LESSEDIT</code></h4>
+
+<p>The <code>less</code> pager supports editing the file being viewed by pressing <code>v</code>. To setup TextMate to be used with less, you need to setup the <code>LESSEDIT</code> variable:</p>
+
+<pre><code>export LESSEDIT='mate -l %lm %f'
+</code></pre>
+
+<h2 id="rmate">1.5 <code>rmate</code></h2>
+
+<p>If you are using ssh then you may find it useful to be able to edit remote files in TextMate.</p>
+
+<p>This can be achieved using the <code>ramte</code> script, for more info see the <a href="https://github.com/textmate/rmate"><code>rmate</code> GitHub page</a>.</p>
+
+<h2 id="url-scheme">1.6 URL Scheme</h2>
+
+<p>The <code>txmt</code> URL scheme allows you to open files in TextMate via hyperlinks found for example in HTML documents (anchors). These can refer to local files which can be useful when:</p>
+
+<ol>
+<li><p>Using <a href="commands.html#commands">commands</a> with <a href="html-output.html#html-output">HTML output</a> that indicate errors/warnings with the current document, or refer to other documents in your project.</p></li>
+<li><p>If you are generating a set of web-pages from simpler (text) files you can have these link to the original text files, so that when you are inspecting the generated result (in a browser) you can quickly edit the source of each page by following the <code>txmt:</code>-link.</p></li>
+</ol>
+
+<p>The URL scheme is <code>txmt:</code> and currently has one command named <code>open</code>. This command takes up to three arguments:</p>
+
+<dl>
+<dt><code>url</code></dt>
+<dd>The (file) URL to open, defaults to current file, example: <code>url=file://~/.profile</code>.</dd>
+
+<dt><code>line</code></dt>
+<dd>The line on which the caret should be placed after opening the file, example: <code>line=11</code>.</dd>
+
+<dt><code>column</code></dt>
+<dd>The column on which the caret should be placed after opening the file, example: <code>column=3</code>.</dd>
+</dl>
+
+<p>So a full example of a <code>txmt:</code> URL could be (<a href="txmt://open/?url=file://~/.profile&amp;line=11&amp;column=2">click here to test</a>):</p>
+
+<pre><code>txmt://open/?url=file://~/.profile&amp;line=11&amp;column=2
+</code></pre>
+
+<p>If your <code>txmt</code> links open in another application then it is because that application has claimed the URL scheme. There is currently no way for the user to change this, but if you go to the Terminal pane in TextMate’s preferences then TextMate will reclaim its URL scheme.</p>
+
+<h2 id="binary-files">1.7 Binary Files</h2>
+
+<p>Some binary files have a textual representation, for example binary property lists, compressed or encrypted text files, compiled AppleScript code, etc.</p>
+
+<p>You can create a TextMate command to decode such files during open. Though for the file types mentioned above, import commands already exist in the Avian bundle.</p>
+
+<p>To create your own import command, create a regular command in the bundle editor with input set to document and output set to replace the document, and then set the “content match” to a regular expression that will match your file type’s signature.</p>
+
+<p>For example a PNG file should always start with the following 8 hexadecimal bytes: <code>89 50 4E 47 0D 0A 1A 0A</code> so a “content match” regular expression to identify PNG files could be: <code>\A\x{89}PNG\r\n\x{1A}\n</code>.</p>
+
+<p>Here <code>\A</code> anchors the match to the beginning of the file and some of the hexadecimal values are represented using their ASCII characters (<code>PNG</code>) or escape sequence (<code>\r\n</code>).</p>
+</section>
+<section>
+
+<h1 id="projects">2 Projects</h1>
+
+<p>TextMate 1.x allowed you to add and group files in a source list, which served as input for “project actions” such as the <a href="">file chooser</a> and multi-file searching.</p>
+
+<p>This functionality is not available in TextMate 2, instead you select a folder to use as a project, and TextMate will treat items in that folder as belonging to the project. Unwanted items can be excluded by <a href="settings.html#filtering-files">filtering files</a>, and symbolic links can be created to reference items outside the folder, though when referencing other folders, they are not followed by default by the <a href="">file chooser</a> and during <a href="searching.html#searching">searching</a>, but this can be enabled.</p>
+<!-- TODO Should probably allow the file browser to expand symbolic links -->
+
+<p>The main reason for the change is that any organization done inside TextMate is not understood by third party tools. For example if you wish to use version control, you will find that pretty much all version control systems work on a folder, not on a set of items defined by a <code>.tmProject</code> file. Even many of TextMate’s own bundle commands are made to work with a “project folder”.</p>
+
+<h2 id="project-folder">2.1 Project Folder</h2>
+
+<p>The project folder is used by the <a href="">file chooser</a>, <a href="searching.html#searching">searching</a>, is exposed to <a href="commands.html#commands">commands</a> as the <code>TM_PROJECT_DIRECTORY</code> <a href="snippets.html#variables">variable</a>, and is also the folder from where <a href="settings.html#file-settings">settings</a> are read when there is no document path.</p>
+
+<p>When opening a folder, for example by dragging the folder to the TextMate application icon, the window created will have the dragged folder associated with it, as that window’s project folder. When opening a single file, it will use the parent folder of that file.</p>
+
+<p>You can see the project folder’s name in the window title or you can use <em>Go → Project Folder</em> (<kbd class='keyEquivalent'>⇧⌘P</kbd>) to show the project folder in the <a href="projects.html#file-browser">file browser</a>.</p>
+
+<p>If you wish to change the project folder then you can use the file browser to navigate to the new desired project folder, open the drop-down menu at the top, and select <em>Use «folder» as Project Folder</em>.</p>
+
+<p>It is possible to explicitly set the project folder via <a href="settings.html#file-settings">file settings</a>. The key to use is <code>projectDirectory</code> and it would normally be set to <code>$CWD</code>, though we generally do not recommend this, as the implicit setting is more flexible, for example it makes it easy to open a subset of the project as a new project, where searching and the file chooser is limited to this subset.</p>
+
+<p>You can use <em>Go → Enclosing Folder</em> (<kbd class='keyEquivalent'>⌘↑</kbd>) with the file chooser or search dialog open to temporarily use parent folders as source for these actions.</p>
+
+<h2 id="window-title">2.2 Window Title</h2>
+
+<p>The window title contains the document name, the name of the project folder (if any) and the current branch, if the project is using a version control system that supports branches. This is done via <a href="settings.html#file-settings">file settings</a> using the <code>windowTitle</code> key, here are the default settings:</p>
+
+<pre><code>windowTitleSCM     = '${TM_SCM_BRANCH:+ ($TM_SCM_NAME: $TM_SCM_BRANCH)}'
+windowTitleProject = '${projectDirectory:+ — ${projectDirectory/^.*\///}}'
+windowTitle        = '$TM_DISPLAYNAME$windowTitleProject$windowTitleSCM'
+</code></pre>
+
+<p>If you wish to change the title you can make use of the two <code>windowTitleProject</code> and <code>windowTitleSCM</code> variables to optionally include project and version control info in your custom title.</p>
+
+<p>For example, if we want to always show the parent folder of the current document we can add this to the project’s <code>.tm_properties</code> file:</p>
+
+<pre><code>windowTitle = &quot;${TM_FILEPATH/.*\/(.*\/).*/$1/}$TM_DISPLAYNAME$windowTitleProject$windowTitleSCM&quot;
+</code></pre>
+
+<p>Or if we want to show the path as relative to the project root, we can use:</p>
+
+<pre><code>windowTitle = '${TM_FILEPATH:?${TM_FILEPATH/${CWD}.//}:$TM_DISPLAYNAME}$windowTitleProject$windowTitleSCM'
+</code></pre>
+
+<h2 id="tabs">2.3 Tabs</h2>
+
+<h3 id="creating-tabs">2.3.1 Creating Tabs</h3>
+
+<p>Most ways to open a file inside TextMate will make it open as a new tab in the current window. Files opened from outside TextMate will open as a new tab if the file is a descendent of an existing window’s project folder, or if a project has been explicitly requested for the file being opened. The latter is possible using <a href="opening-files.html#mate">mate</a> and setting the <code>TM_PROJECT_UUID</code> <a href="snippets.html#variables">environment variable</a>, something that is implicitly done when <code>mate</code> is called by a <a href="commands.html#commands">command</a> running inside TextMate, meaning bundle commands that open new files will normally open these as tabs in the existing project.</p>
+
+<p>Selecting <em>Window → Merge All Windows</em> will move all open documents in non-minimized windows to a single window (with tabs). That minimized windows are excluded from the merging can be exploited if the goal is to merge all but a few documents into a single window: minimize the windows that should be left alone, and then select the action.</p>
+
+<p>Once a file has been opened in a new tab, it is possible to move it to a new window by selecting <em>Window → Move Tab to New Window</em>, by selecting the same action in the tab’s context menu, or by double-clicking the tab.</p>
+
+<p>Tabs can also be dragged between windows but if dropped outside the tab bar of an existing TextMate window, the drag will act as if the file itself was dropped, rather than create a new window for the document. This is useful when you need the path of a document inserted into your terminal, as you can then drag and drop the desired tab to the terminal window.</p>
+
+<h4 id="default-file-type-for-new-tabs">2.3.1.1 Default File Type for New Tabs</h4>
+
+<p>When selecting <em>File → New Tab</em> (<kbd class='keyEquivalent'>⌥⌘N</kbd>), the file type is read via <a href="settings.html#file-settings">file settings</a> using the <code>fileType</code> key scoped to <code>attr.untitled</code>. If for example we wish new files in our <code>/path/to/project</code> should default to markdown, then create <code>/path/to/project/.tm_properties</code> containing:</p>
+
+<pre><code>[ attr.untitled ]
+fileType = &quot;text.html.markdown&quot;
+</code></pre>
+
+<p>This setting is also used by <em>File → New File</em> (<kbd class='keyEquivalent'>⇧⌘N</kbd>).</p>
+
+<h3 id="closing-tabs">2.3.2 Closing Tabs</h3>
+
+<p>A common problem is being left with too many open tabs. In an attempt to counter that, TextMate will automatically close tabs that hasn’t been used in a while, when the tab bar overflows.</p>
+
+<p>Additionally there are a few explicit ways that you can close multiple tabs in a single action:</p>
+
+<ul>
+<li>Hold down option (<kbd class='keyEquivalent'>⌥</kbd>) when opening a file either via the <a href="projects.html#file-browser">file browser</a> or <a href="">file chooser</a>. For the latter, you normally open files via return (<kbd class='keyEquivalent'>↩</kbd>) so here you would press option-return (<kbd class='keyEquivalent'>⌥↩</kbd>).</li>
+<li>Use <em>File → Close Other Tabs</em> (<kbd class='keyEquivalent'>⌃⌘W</kbd>) or <em>File → Close All Tabs</em> (<kbd class='keyEquivalent'>⌃⌥⌘W</kbd>).</li>
+<li>Right-click a tab and select any of the close actions, e.g. <em>Close Tabs to the Right</em>.</li>
+</ul>
+
+<p>Sometimes you have documents that should stay open, like a to-do list, which may prevent the use of a batch close action. In this case, right-click the tab in question and select <em>Sticky</em> (toggle). When a tab is made sticky, the batch close actions will leave it open.</p>
+
+<h2 id="file-browser">2.4 File Browser</h2>
+
+<p>Opening files from the file browser is done by single-clicking the file’s icon, double-clicking the file name, or using command-down (<kbd class='keyEquivalent'>⌘↓</kbd>) when focus is in the file browser.</p>
+
+<p>Descending into file packages or application bundles can be done either by selecting <em>Show Package Contents</em> from the context menu, or by holding option (<kbd class='keyEquivalent'>⌥</kbd>) while double-clicking the item or single-clicking the item’s icon.</p>
+
+<p>If command (<kbd class='keyEquivalent'>⌘</kbd>) is pressed while single-clicking an icon in the file browser, then the clicked item will be shown in Finder. The same functionality is also available from the context menu.</p>
+
+<h3 id="location-and-selections">2.4.1 Location and Selections</h3>
+
+<p>Many <a href="commands.html#commands">commands</a> use the file browser selection as the set of files to work on, for example if you wish to see uncommitted changes for a subset of files, select those files before invoking the version control command. If there are no selection, the commands will generally work on the entire project.</p>
+
+<p>For this reason, there are two very useful actions, namely <em>Go → Current Document</em> (<kbd class='keyEquivalent'>⌃⌘R</kbd>) which will reveal and select the current document in the file browser. In the file browser’s context menu there is <em>Select None</em> (<kbd class='keyEquivalent'>⇧⌘A</kbd>) which will deselect all selected items. The key equivalent for this item works even when focus is not in the file browser.</p>
+
+<p>In the <em>Go</em> menu you can find a few other useful actions for changing location of the file browser. Be aware that the key equivalent of <em>Go → Back</em> (<kbd class='keyEquivalent'>⌘[</kbd>), <em>Go → Forward</em> (<kbd class='keyEquivalent'>⌘]</kbd>), <em>Go → Enclosing Folder</em> (<kbd class='keyEquivalent'>⌘↑</kbd>), and <em>Go → Other Folder…</em> (<kbd class='keyEquivalent'>⇧⌘G</kbd>) is only available when focus is in the file browser, and due to technical limitations, will not show in the menu.</p>
+
+<h3 id="drag-and-drop">2.4.2 Drag and Drop</h3>
+
+<p>Drag and drop can be used to move files from one location to another but by holding down command (<kbd class='keyEquivalent'>⌘</kbd>) the drop will result in a duplicate, and control (<kbd class='keyEquivalent'>⌃</kbd>) will cause a symbolic link to be created at the drop location.</p>
+
+<h3 id="keyboard-usage">2.4.3 Keyboard Usage</h3>
+
+<p>Moving keyboard focus to the file browser can be done by selecting <em>Navigate → Move Focus to File Browser</em> (<kbd class='keyEquivalent'>⌥⌘⇥</kbd>). Use the same action to move focus back to the document.</p>
+
+<p>When focus is in the file browser, the following key equivalents can be used.</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Key Equivalent</th>
+	<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘↓</kbd>, <kbd class='keyEquivalent'>⌘O</kbd></td>
+	<td>Open selected item(s)</td>
+</tr>
+<tr>
+	<td>Space</td>
+	<td>Quick Look selected item(s)</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>↩</kbd></td>
+	<td>Rename selected item</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘D</kbd></td>
+	<td>Duplicate selected item(s)</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘X</kbd>, <kbd class='keyEquivalent'>⌘C</kbd></td>
+	<td>Cut or copy selected item(s)</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘V</kbd></td>
+	<td>Paste item(s)</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘⌫</kbd></td>
+	<td>Move selected item(s) to trash</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘Z</kbd>, <kbd class='keyEquivalent'>⇧⌘Z</kbd></td>
+	<td>Undo or redo last action</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌥⌘I</kbd></td>
+	<td>Show hidden files</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘[</kbd>, <kbd class='keyEquivalent'>⌘←</kbd></td>
+	<td>Go back in history</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘]</kbd>, <kbd class='keyEquivalent'>⌘→</kbd></td>
+	<td>Go forward in history</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌘↑</kbd></td>
+	<td>Go to enclosing folder</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⇧⌘G</kbd></td>
+	<td>Go to folder…</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⇧⌘F</kbd></td>
+	<td>Search with source based on selection</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌥F2</kbd></td>
+	<td>Show context menu</td>
+</tr>
+</tbody>
+</table>
+
+<p>When you cut one or more items, they will not be removed before you paste them somewhere else, as the action is meant for moving items. Use delete instead of cut, if you want the item to be removed.</p>
+
+<h3 id="effective-folder">2.4.4 Effective Folder</h3>
+
+<p>Actions like <em>File → New File</em> (<kbd class='keyEquivalent'>⇧⌘N</kbd>) require a folder which is obtained from the file browser in this way:</p>
+
+<p>If something is selected, the folder containing the selected item(s) will be used as the effective folder, unless a single expanded folder is selected, in this case, the selected folder is used. If nothing is selected, the top folder showing in the file browser is used.</p>
+
+<h3 id="custom-commands">2.4.5 Custom Commands</h3>
+
+<p>It is possible to add your own <a href="commands.html#commands">commands</a> to the file browser’s action menu.</p>
+
+<p>This is done by creating a bundle command and setting its <a href="concepts.html#semantic-class">semantic class</a> to <code>callback.file-browser.action-menu</code>.</p>
+
+<p>An example of a command that appear in the file browser’s action menu is <em>Bundles → Shell Script → Open Terminal</em> (<kbd class='keyEquivalent'>⌃⇧O</kbd>). The <em>Compress Selected Items</em> and <em>Show Images</em> are also bundle commands.</p>
+<!-- TODO Improve how commands are setup to be used in the file browser -->
+<!-- TODO Document what file browser commands can expect in terms of variables and input/output -->
+</section>
+<section>
+
+<h1 id="version-control">3 Version Control</h1>
+
+<p>TextMate will detect when a project is using Git, Mercurial, Subversion, or Perforce. When detected, it will add <code>attr.scm.«system»</code> as an <a href="scopes.html#attribute-scope">attribute scope</a>. This is to allow the proper bundle to be active, for example the actions in the Git bundle has a scope selector of <code>attr.scm.git</code> so that they only show under <em>Bundles → SCM</em> (<kbd class='keyEquivalent'>⌘Y</kbd>) when TextMate has detected, that git is used as version control system.</p>
+
+<p>For Git, Mercurial, and Subversion, TextMate will call out to the appropriate shell command which, for each of the respective version control systems, can be set as the following <a href="snippets.html#variables">variables</a>: <code>TM_GIT</code>, <code>TM_HG</code>, and <code>TM_SVN</code>. If no variable is set, TextMate will try to find the shell command via the <a href="commands.html#search-path">search path</a>.</p>
+
+<p>TextMate asks the version control system for a few values, which are exposed both as <a href="variables.html#dynamic-variables">dynamic variables</a> of the form <code>TM_SCM_«variable»</code> and as <code>attr.scm.«variable».«value»</code> <a href="scopes.html#attribute-scope">attribute scopes</a>. For example if the version control system reports that the current branch is <code>master</code> then the <code>TM_SCM_BRANCH</code> variable will be set to <code>master</code> and <code>attr.scm.branch.master</code> will be part of the current scope. The variable is mostly useful for decorating the <a href="projects.html#window-title">window title</a>.</p>
+
+<p>TextMate also asks the version control system for file status. File status is used to add badges to file icons and to show deleted items as ghost items in the file browser, which allow selecting such items before using <em>Bundles → SCM → Commit</em> (<kbd class='keyEquivalent'>⌘Y</kbd>) or <em>Bundles → SCM → Revert…</em> (<kbd class='keyEquivalent'>⌘Y</kbd>). You can see a list of modified and untracked files in your project by selecting <em>Go → SCM Status</em> (<kbd class='keyEquivalent'>⇧⌘Y</kbd>).</p>
+
+<p>TextMate also has bundles for the various version control systems which provide actions to see uncommitted changes, commit changes, and much more. It is outside the scope of this manual to document how each of these bundles work. Though on a general note, the actions will normally work with selected items in the file browser, falling back to entire project if there is no selection, which makes <em>Go → SCM Status</em> (<kbd class='keyEquivalent'>⇧⌘Y</kbd>) a very useful feature along with the <em>Select None</em> (<kbd class='keyEquivalent'>⇧⌘A</kbd>) file browser action.</p>
+
+<p>It is worth mentioning that the line numbers in the diff renderings produced by actions in the Git bundle can be clicked, and will take you to the clicked line.</p>
+
+<p>If for some reason you wish to disable the badges, TextMate’s built-in version control support can be disabled by setting the <code>scmStatus</code> key to <code>false</code> in <code>~/.tm_properties</code>.</p>
+</section>
+<section>
+
+<h1 id="searching">4 Searching</h1>
+
+<p>The primary search actions which you should learn the key equivalents for are:</p>
+
+<ul>
+<li><em>Edit → Find → Find Next</em> (<kbd class='keyEquivalent'>⌘G</kbd>)</li>
+<li><em>Edit → Find → Find Previous</em> (<kbd class='keyEquivalent'>⇧⌘G</kbd>)</li>
+<li><em>Edit → Find → Show History</em> (<kbd class='keyEquivalent'>⌃⌥⌘F</kbd>)</li>
+<li><em>Edit → Find → Use Selection for Find</em> (<kbd class='keyEquivalent'>⌘E</kbd>)</li>
+</ul>
+
+<p>Another action is <em>Bundles → Text → Selecting → Extend Selection to Include Next</em> (<kbd class='keyEquivalent'>⌃W</kbd>), more detail about this action can be found in the <a href="searching.html#search-clipboard">search clipboard</a> section below.</p>
+
+<p>TextMate’s search dialog can be brought up by selecting <em>Edit → Find → Find…</em> (<kbd class='keyEquivalent'>⌘F</kbd>). Once this dialog is showing the <em>Edit → Find → Find All</em> (<kbd class='keyEquivalent'>⌥⌘F</kbd>) menu item will trigger the <code>Find All</code> button in the search dialog and show you all results from the current document. When the search dialog is not showing, the same action will instead select all matches in the current document.</p>
+
+<p>If you wish to search for tab or newline characters then you can press option-tab or option-newline to insert these in the search or replace fields. The fields will automatically grow with their content.</p>
+
+<p>The sigma button (<code>Σ</code>) in the search dialog can be used to count the number of results in the current document. Though the same information can be obtained via <code>Find All</code> so this action is likely to be removed in a future version of TextMate.</p>
+
+<h2 id="folder-search">4.1 Folder Search</h2>
+
+<p>You can select <em>Edit ⇢ Find → Find in Project…</em> (<kbd class='keyEquivalent'>⇧⌘F</kbd>) to bring up the search dialog with the <code>In</code> pop-up defaulting to the current project folder. You can also click the magnifying glass in the file browser to open a search dialog pointing to the file browser’s <a href="projects.html#effective-folder">effective folder</a>, or switch focus to the file browser before pressing <kbd class='keyEquivalent'>⇧⌘F</kbd>.</p>
+
+<p>Should you wish to extend the search to a parent folder then you can use <em>Go → Enclosing Folder</em> (<kbd class='keyEquivalent'>⌘↑</kbd>) or interact with the <code>In</code> pop-up menu.</p>
+
+<p>When the <code>In</code> pop-up is showing a folder you can select <code>Find All</code> to perform a search across the files in the selected folder.</p>
+
+<p>If you wish to limit the search then you can edit the <code>matching</code> <a href="references.html#glob-string">glob string</a>. For example to only search HTML files you can make it <code>*.html</code> or if you wish to exclude all files in the <code>vendor</code> folder, make it <code>!vendor/**</code>.</p>
+
+<p>See <a href="settings.html#filtering-files">filtering files</a> for more options.</p>
+
+<p>If you wish the search to follow symbolic links then you should enable this via the gear pop-up menu to the right of the <code>matching</code> text field.</p>
+
+<p>You can abort a running search by clicking the stop button that appear to the left of the status text, closing the window, or pressing <kbd class='keyEquivalent'>⌘.</kbd>.</p>
+<!-- TODO Allow navigating recent folders with <kbd class='keyEquivalent'>⌘\[</kbd> and <kbd class='keyEquivalent'>⌘]</kbd> -->
+
+<h2 id="search-results">4.2 Search Results</h2>
+
+<p>After a folder search you will see the results grouped by file. There are a few useful actions related to these results which we’ll go over in this section.</p>
+
+<p>Using command <kbd class='keyEquivalent'>⌘1</kbd>-<kbd class='keyEquivalent'>⌘n</kbd> will select the first result in the n’th file. It will also move focus to the results list, allowing you to use arrow up and down to move through the results.</p>
+
+<p>Using <em>Edit → Find → Find Next</em> (<kbd class='keyEquivalent'>⌘G</kbd>) will select the first result, and subsequent uses will advance through the results. Likewise <em>Edit → Find → Find Previous</em> (<kbd class='keyEquivalent'>⇧⌘G</kbd>) will initially select the last result and move backwards through the results.</p>
+
+<p>If you close the search dialog and use <em>Edit → Find → Find Next</em> (<kbd class='keyEquivalent'>⌘G</kbd>) in a document with no more results, TextMate will open the next file which have results and select the first result in this file.</p>
+
+<p>From the gear menu in the find dialog you can select <em>Collapse Results</em> (<kbd class='keyEquivalent'>⌥⌘1</kbd>). This is useful when you are only interested in which files contain matches and not the matches themselves.</p>
+
+<p>Also in the gear menu are actions for copying the results to the clipboard. You can copy just the matching parts or the entire line with the match, either with or without file name. The first option, copying matching parts, is useful for <a href="references.html#regular-expression">regular expression</a> searches, for example a project search for <code>href=&quot;.*?&quot;</code> followed by <em>Copy Matching Parts</em> will provide you with a list of all links across all files. You can paste that into a new document and use <em>Bundles → Text → Sorting → Sort Documents &amp; Remove Duplicates</em> (F5) to remove duplicates.</p>
+
+<h2 id="replacing">4.3 Replacing</h2>
+
+<p>When you search for regular expressions the replacement string is interpreted as a <a href="references.html#format-string">format string</a> where you can use captures from the search. Here is a <a href="http://blog.macromates.com/2012/nested-replacements/">blog post about using captures and nested replacements in TextMate</a>.</p>
+
+<p>As mentioned in the blog post, TextMate offers you replacement previews. These are automatically shown when focus is in the <code>Replace</code> text field.</p>
+
+<p>For results that you do not wish to have replaced, uncheck the check box next to the result. By holding down option (<kbd class='keyEquivalent'>⌥</kbd>) when clicking a check box, all results for the corresponding file will be excluded or included.</p>
+
+<h2 id="search-clipboard">4.4 Search Clipboard</h2>
+
+<p>Similar to how you can copy text to the clipboard with <em>Edit → Copy</em> (<kbd class='keyEquivalent'>⌘C</kbd>) and paste it later with <em>Edit → Paste</em> (<kbd class='keyEquivalent'>⌘V</kbd>) you can use <em>Edit → Find → Use Selection for Find</em> (<kbd class='keyEquivalent'>⌘E</kbd>) to place the current selection on the (globally shared) search clipboard and use <em>Edit → Find → Find Next</em> (<kbd class='keyEquivalent'>⌘G</kbd>) or <em>Edit → Find → Find Previous</em> (<kbd class='keyEquivalent'>⇧⌘G</kbd>) to find the next or previous occurrence of the search string.</p>
+
+<p>The content of the search clipboard is also used when opening the find dialog using <em>Edit → Find → Find…</em> (<kbd class='keyEquivalent'>⌘F</kbd>).</p>
+
+<p>TextMate maintains a history of your previous search strings and you can select <em>Edit → Find → Show History</em> (<kbd class='keyEquivalent'>⌃⌥⌘F</kbd>) to see previous search strings. If you close the list with return (<kbd class='keyEquivalent'>↩</kbd>) then TextMate will search for the next occurrence of the selected string, whereas closing the list with escape (<kbd class='keyEquivalent'>⎋</kbd>) will change the current string on the search clipboard but not perform a search.</p>
+
+<p>In addition to placing selection on the search clipboard, you can also use <em>Edit → Find → Use Selection for Replace</em> (<kbd class='keyEquivalent'>⇧⌘E</kbd>). This is useful if you want to perform a replacement and bypass the search dialog. The steps would be:</p>
+
+<ol>
+<li>Select the string you wish to replace and press <kbd class='keyEquivalent'>⌘E</kbd>.</li>
+<li>Overtype the selection with the replacement, select it, and press <kbd class='keyEquivalent'>⇧⌘E</kbd>.</li>
+</ol>
+
+<p>After this you can use <em>Edit → Find → Replace All</em> (<kbd class='keyEquivalent'>⌃⌘G</kbd>), make a selection and use <em>Edit → Find → Replace All in Selection</em> (<kbd class='keyEquivalent'>⌃⇧⌘G</kbd>), or possibly <em>Edit → Find → Replace and Find</em> (<kbd class='keyEquivalent'>⌥⌘G</kbd>)</p>
+
+<p>If you wish to replace only a few instances near the caret, it might be easier to select the first match and then use <em>Bundles → Text → Selecting → Extend Selection to Include Next</em> (<kbd class='keyEquivalent'>⌃W</kbd>). This action will make the next occurrence of the currently selected string part of the selection, causing multiple occurrences to be selected. Use it to select all the occurrences you wish to replace, and then perform your replacement, as the changes you do to the first occurrence will be mirrored to all the other occurrences.</p>
+
+<p>With no selection the action is <em>Edit → Select → Word</em> (<kbd class='keyEquivalent'>⌃W</kbd>) which means that for single word replacements you only need to place the caret on the word to be replaced and then press <kbd class='keyEquivalent'>⌃W</kbd> until all the occurrences are selected.</p>
+
+<h2 id="search-options">4.5 Search Options</h2>
+
+<p>Four options affect how the search works, these can be toggled either via the <em>Edit</em> menu or in the find dialog.</p>
+
+<p>The options are as follows:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Key Equivalent</th>
+	<th>Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Ignore Case</td>
+	<td><kbd class='keyEquivalent'>⌥⌘C</kbd></td>
+	<td>Perform a case insensitive search.</td>
+</tr>
+<tr>
+	<td>Regular Expression</td>
+	<td><kbd class='keyEquivalent'>⌥⌘R</kbd></td>
+	<td>Treat the search string as a <em>regular expression</em>.</td>
+</tr>
+<tr>
+	<td>Ignore Whitespace</td>
+	<td></td>
+	<td>Whitespace in the document and search string is ignored. This makes it easy to search for multi-line content regardless of its indentation.</td>
+</tr>
+<tr>
+	<td>Wrap Around</td>
+	<td><kbd class='keyEquivalent'>⌥⌘A</kbd></td>
+	<td>Start over from the top of the document when no match is found.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="incremental-search">4.6 Incremental Search</h2>
+
+<p>Selecting <em>Edit → Find → Incremental Search</em> (<kbd class='keyEquivalent'>⌃S</kbd>) will open a search field at the bottom of the window where a search string can be entered, and TextMate will show what it matches in the document. The search is case-insensitive and ignores whitespace.</p>
+
+<p>While the search field is showing you can use the following key equivalents:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Key Equivalent</th>
+	<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><kbd class='keyEquivalent'>⌃S</kbd> <kbd class='keyEquivalent'>⇥</kbd></td>
+	<td>Find next</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>⌃⇧S</kbd> <kbd class='keyEquivalent'>⇧⇥</kbd></td>
+	<td>Find previous</td>
+</tr>
+<tr>
+	<td><kbd class='keyEquivalent'>↩</kbd> <kbd class='keyEquivalent'>⎋</kbd></td>
+	<td>Close search field</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+
+<h1 id="text-editing">5 Text Editing</h1>
+
+<h2 id="navigation">5.1 Navigation</h2>
+
+<h3 id="word-movement">5.1.1 Word Movement</h3>
+
+<p>Moving between words is done by holding option (<kbd class='keyEquivalent'>⌥</kbd>) and using arrow keys. Selecting can be done by additionally holding down shift (<kbd class='keyEquivalent'>⇧</kbd>), for example to select to the end of the word to the right of the caret, press <kbd class='keyEquivalent'>⌥⇧→</kbd>.</p>
+
+<p>Deleting to beginning or end of words can be done by holding down option when pressing the backward or forward delete keys. On laptop keyboards the forward delete key (<kbd class='keyEquivalent'>⌦</kbd>) is available by holding down the <kbd>fn</kbd> modifier key when pressing backward delete (<kbd class='keyEquivalent'>⌫</kbd>).</p>
+
+<p>By default TextMate classifies a character as belonging to one of 3 groups: <code>word</code>, <code>space</code>, or <code>other</code>. Any sequence of characters belonging to the same group is considered a single unit for the purpose of word movement and other actions that break up the text, like word selection or <a href="text-editing.html#buffer-completion">buffer completion</a>.</p>
+
+<p>It is possible to change the group that text belongs to by adding a <code>characterClass</code> <a href="settings.html#scope-settings">scope setting</a>. For example the Source bundle sets <code>characterClass = 'escape';</code> using a scope selector of <code>constant.character.escape</code>. This means that in a code snippet like the following:</p>
+
+<pre><code>str = &quot;foo‸\nbar&quot;
+</code></pre>
+
+<p>Using <kbd class='keyEquivalent'>⌥→</kbd> will move caret so we end up before <code>bar</code>:</p>
+
+<pre><code>str = &quot;foo\n‸bar&quot;
+</code></pre>
+
+<p>This is because <code>\n</code> is matched by the <a href="language-grammars.html#language-grammars">language grammar</a> and scoped as <code>constant.character.escape.*</code>, which the Source bundle tells TextMate has character class <code>escape</code>, so for the purpose of word movement, it is separate from <code>bar</code>, which has character class <code>word</code>.</p>
+
+<h3 id="sub-word-movement">5.1.2 Sub-word Movement</h3>
+
+<p>If you are using variables with <code>camelCase</code> or <code>snake_case</code> then you can hold control (<kbd class='keyEquivalent'>⌃</kbd>) to move between sub-words, for example (using <kbd class='keyEquivalent'>⌃→</kbd>):</p>
+
+<pre><code>‸someVariable        → some‸Variable
+‸some_other_variable → some‸_other_variable
+</code></pre>
+
+<p>As with <a href="text-editing.html#word-movement">word movement</a>, you can also use the control (<kbd class='keyEquivalent'>⌃</kbd>) modifier with shift (<kbd class='keyEquivalent'>⇧</kbd>) to make selections or delete to sub-word boundaries with control (<kbd class='keyEquivalent'>⌃</kbd>) and the forward and backward delete keys.</p>
+
+<h3 id="column-movement">5.1.3 Column Movement</h3>
+
+<p>Using arrow up/down when holding option (<kbd class='keyEquivalent'>⌥</kbd>) will move the caret to the first/last row in the current column. As usual, also hold down shift (<kbd class='keyEquivalent'>⇧</kbd>) to get it selected.</p>
+
+<p>For example pressing <kbd class='keyEquivalent'>⌥⇧↓</kbd> in this example:</p>
+
+<pre><code>1:  foo  = ‸quux
+2:  bar  =  corge
+3:  baz  =  grault
+4:  qux  =  garply
+</code></pre>
+
+<p>Will select from <code>quux</code> and down to just before <code>garply</code> like this:</p>
+
+<pre><code>1:  foo  = [xxxxxxx
+2:  xxxxxxxxxxxxxxx
+3:  xxxxxxxxxxxxxxx
+4:  xxxxxxx]garply
+</code></pre>
+
+<p>This in itself may not seem like a useful feature, but once we have this (stream) selection, we can use <em>Edit → Select → Toggle Column Selection</em> (<kbd class='keyEquivalent'>⌥</kbd>) to turn it into a (zero-width) columnar selection. The option key (<kbd class='keyEquivalent'>⌥</kbd>) for this menu item means to press and quickly release the option key, don’t hold it down or press any other key.</p>
+
+<p>The result becomes:</p>
+
+<pre><code>1:  foo  = ‸quux
+2:  bar  = ‸corge
+3:  baz  = ‸grault
+4:  qux  = ‸garply
+</code></pre>
+
+<p>That is, we now have <a href="text-editing.html#multiple-carets">multiple carets</a> and can make batch changes across all the lines.</p>
+
+<h3 id="paired-character-movement">5.1.4 Paired Character Movement</h3>
+
+<p>Paired characters are things like braces, brackets, and parenthesis. These can be defined using the <code>highlightPairs</code> <a href="settings.html#scope-settings">scope setting</a>. The value is an array of arrays, each sub-array containing the first and last “character” in a pair. The character can be a string or a regular expression, for the latter, it should be surrounded by slashes.</p>
+
+<p>For example the HTML bundle has this setting:</p>
+
+<pre><code>highlightPairs = (
+  ( '(', ')' ),
+  ( '{', '}' ),
+  ( '[', ']' ),
+  ( '“', '”' ),
+  ( '/&lt;(?!area|base|basefont|br|col|frame|hr|img|input|isindex|link|meta|param)\w+[^&gt;]*(?&lt;!/)&gt;/',
+    '/&lt;/\w+&gt;/'
+  ),
+);
+</code></pre>
+
+<p>The last pair defined is done with regular expressions that match open and close tags.</p>
+
+<p>The setting is both used to pairs when moving caret over one of the two items in a pair, but is also used to allow moving and selecting to pair boundaries.</p>
+
+<p>Use control (<kbd class='keyEquivalent'>⌃</kbd>) with arrow up/down to move to the begin/end of the current pair. You can hold down shift (<kbd class='keyEquivalent'>⇧</kbd>) to make a selection. For example with the following code example:</p>
+
+<pre><code>someFunction(foo, bar‸, baz.qux())
+</code></pre>
+
+<p>Press <kbd class='keyEquivalent'>⌃⇧↓</kbd> to select the last argument, resulting in:</p>
+
+<pre><code>someFunction(foo, bar[xxxxxxxxxx])
+</code></pre>
+
+<p>It is also possible to use <em>Edit → Select → Enclosing Typing Pairs</em> (<kbd class='keyEquivalent'>⇧⌘B</kbd>) to extend the selection to include the immediate outer pairs defined, using that action would result in:</p>
+
+<pre><code>someFunction[xxxxxxxxxxxxxxxxxxxx]
+</code></pre>
+
+<p>Since this is an <a href="text-editing.html#unanchored-selection">unanchored selection</a> we can use <kbd class='keyEquivalent'>⌥⇧←</kbd> to further extend the selection so that it includes <code>someFunction</code>.</p>
+
+<p>When the paired characters are on their own lines, as is often the case with braces, the selection will be extended to full lines, for example in this example:</p>
+
+<pre><code>1:  int main (int argc, char const* argv[])
+2:  {
+3:     for(size_t i = 0; i &lt; argc; ++i)
+4:     {
+5:        ‸printf(&quot;%zu: %s\n&quot;, i, argv[i]);
+6:     }
+7:     return 0;
+8:  }
+</code></pre>
+
+<p>Using <em>Edit → Select → Enclosing Typing Pairs</em> (<kbd class='keyEquivalent'>⇧⌘B</kbd>) will fully select line 4, 5, and 6.</p>
+
+<p>Two convenient actions worth mentioning are <em>Bundles → Source → Wrap in Braces</em> ({) and <em>Bundles → Source → Unwrap Braces</em> (}). Both are only active when there is a selection, and they will wrap/unwrap and increase/decrease indent accordingly.</p>
+
+<p>Slightly related is <em>Bundles → Source → Strip Wrap Characters</em> (]). This action is also active only when there is a selection, and will strip the outer “wrap characters” of the selection, those could be parenthesis, quotes, or similar.</p>
+
+<h3 id="bookmarks">5.1.5 Bookmarks</h3>
+
+<p>You can use <em>Navigate → Toggle Bookmark</em> (<kbd class='keyEquivalent'>⌘F2</kbd>) to add a remove a bookmark for the current line. Getting back to this bookmark is either done by cycling through bookmarks, using <em>Navigate → Next Bookmark</em> (F2) and <em>Navigate → Previous Bookmark</em> (<kbd class='keyEquivalent'>⇧F2</kbd>), or by finding the bookmark in the <em>Navigate → Go to Bookmark</em> submenu. This menu also allows you to clear all bookmarks for the current document.</p>
+
+<p>You may find that using function keys require the use of the <kbd>fn</kbd> modifier key. This can be changed at the Keyboard page in System Preferences.</p>
+
+<h3 id="symbol-chooser">5.1.6 Symbol Chooser</h3>
+
+<p>For languages that support it, the rightmost pop-up in the status bar shows the current “symbol” (often the function prototype or heading above the caret). This pop-up can be used to move the caret to another section of your document.</p>
+
+<p>For keyboard navigation there is also <em>Navigation → Go to Symbol…</em> (<kbd class='keyEquivalent'>⇧⌘T</kbd>) which opens a panel which supports filtering similar to the <a href="">file chooser</a>.</p>
+
+<p>The panel can be left open and will update as the document is edited. If you single-click an item in the list, the caret will move to the symbol clicked. Double-clicking will do the same but closes the panel.</p>
+
+<p>The symbol list is constructed by including all the parts of the document for which the scope has a matching <code>showInSymbolList</code> <a href="settings.html#scope-settings">scope setting</a> set to <code>1</code> (true).</p>
+
+<p>In addition to <code>showInSymbolList</code> there is a <code>symbolTransformation</code> setting which is one or more regular expression substitutions which are performed on the text extracted. The value of this setting should be: <code>s/«regexp»/«format»/«options»</code> optionally followed by <code>;</code> and more substitutions. It is also possible to put comments in the value, these start with <code>#</code> and end at the next newline.</p>
+
+<p>So if we want to show Markdown headings in the list, which are lines that start with one or more <code>#</code> marks, then we first make sure our <a href="language-grammars.html#language-grammars">language grammar</a> assigns a name to these, a simple rule could be the following:</p>
+
+<pre><code>{  name = 'markup.heading.markdown';
+   match = '^#{1,6}\s*(.*)$';
+},
+</code></pre>
+
+<p>Now we can target headings using a <a href="references.html#scope-selector">scope selector</a> of <code>markup.heading.markdown</code>. We create a <a href="settings.html#scope-settings">scope setting</a> using this scope selector and make it:</p>
+
+<pre><code>{  showInSymbolList = 1; }
+</code></pre>
+
+<p>This however will include the leading pound characters (<code>#</code>) in the list. We can either assign a name (via the <a href="language-grammars.html#language-grammars">language grammar</a>) to the actual title, or we can perform a substitution to get rid of the pound characters. The latter has the advantage that we can change these to indent. This is done by changing the <a href="settings.html#scope-settings">scope setting</a> to:</p>
+
+<pre><code>{  showInSymbolList = 1;
+   symbolTransformation = 's/^#(#*)\s*(.*)/${1/#/\x{2003}/g}$2/';
+}
+</code></pre>
+
+<p>The transformation is a nested transformation. The outer match will capture all but the first pound character into capture register one and then the actual heading into capture register two. In the <a href="references.html#format-string">format string</a> we change pound characters in capture register one into em-spaces (<code>\x{2003}</code>) and append the heading as-is.</p>
+
+<h3 id="freehanded-movement">5.1.7 Freehanded Movement</h3>
+
+<p>It can sometimes be useful to move caret without being restricted by the line endings, for example if we wish to add aligned values to the following source:</p>
+
+<pre><code>buttonMap = {
+   kHome:
+   kBack:
+   kForward:
+   kReload:
+}
+</code></pre>
+
+<p>Then we would have to add four spaces of padding after <code>kHome:</code> before typing <code>1</code>, then arrow down, which would require adding another four spaces of padding, etc.</p>
+
+<p>Alternatively we can hold down option (<kbd class='keyEquivalent'>⌥</kbd>) while clicking (with the mouse) where we wish to type the first text. This gives us a caret that can be moved freely. That way, we can type <code>1</code> followed by arrow down and left, and then type <code>2</code>, etc. until we get:</p>
+
+<pre><code>buttonMap = {
+   kHome:    1
+   kBack:    2
+   kForward: 3
+   kReload:  4
+}
+</code></pre>
+
+<p>Another way to activate this mode is by placing the caret at the end of a line and then use <em>Text → Move Selection → Right</em> (<kbd class='keyEquivalent'>⌃⌘→</kbd>).</p>
+
+<p>To leave the mode, either use the mouse and click somewhere in the text (without holding down option) or use <em>Text → Move Selection → Left</em> (<kbd class='keyEquivalent'>⌃⌘←</kbd>) (without a selection).</p>
+
+<h2 id="selection">5.2 Selection</h2>
+
+<p>Selecting text is done by holding down shift (<kbd class='keyEquivalent'>⇧</kbd>) while using the arrow keys, optionally holding down some of the modifier keys described in the previous section.</p>
+
+<p>A selection created this way is anchored to where the caret is, the first time movement is done while holding down shift. Any further movement with shift down will extend or shrink the selection, by moving the non-anchor end point of the selection.</p>
+
+<h3 id="unanchored-selection">5.2.1 Unanchored Selection</h3>
+
+<p>Any action that cause a selection and doesn’t involve the arrow keys, is unanchored, which means that the initial movement done (while holding down shift) after creating the selection, will extend the selection, and set the anchor as the opposite end point to the one being moved.</p>
+
+<p>For example given the following line:</p>
+
+<pre><code>foo(baz, bar(qux, ‸quux, corge))
+</code></pre>
+
+<p>If we wish to select <code>bar(qux, quux, corge)</code> we can do so by first choosing <em>Edit → Select → Enclosing Typing Pairs</em> (<kbd class='keyEquivalent'>⇧⌘B</kbd>). This will select <code>(qux, quux, corge)</code>. After this, we can extend the selection to either side, by using the appropriate arrow key. Here we wish to extend it to the left, so we use <kbd class='keyEquivalent'>⌥⇧←</kbd> to extend it by one word. Had we instead used <kbd class='keyEquivalent'>⇧→</kbd> then we would have extended the selection to the right, by adding the last <code>)</code> to the selection.</p>
+
+<h3 id="unit-selections">5.2.2 Unit Selections</h3>
+
+<ul>
+<li>Select → Word, Scope, Enclosing Typing Pairs</li>
+</ul>
+
+<h3 id="column-selection">5.2.3 Column Selection</h3>
+
+<ul>
+<li><em>Edit → Select → Toggle Column Selection</em> (<kbd class='keyEquivalent'>⌥</kbd>).</li>
+</ul>
+
+<h3 id="wrapping-selection">5.2.4 Wrapping Selection</h3>
+
+<ul>
+<li>Paired characters, HTML tags</li>
+<li>Wrapping/unwrapping braces</li>
+<li>Stripping wrap characters (quotes, etc.)</li>
+</ul>
+
+<h3 id="indenting-selection">5.2.5 Indenting Selection</h3>
+
+<ul>
+<li>Increase, decrease, estimate</li>
+</ul>
+
+<h3 id="moving-selection">5.2.6 Moving Selection</h3>
+
+<h2 id="multiple-carets">5.3 Multiple Carets</h2>
+
+<ul>
+<li>How to activate via: mouse, column selection + movement, column selection + unit selection, search actions, find next and extend selection</li>
+<li>Behavior with multiple carets: find next, copy/paste, etc.</li>
+<li>How to get back to a single caret</li>
+</ul>
+
+<h2 id="cut-copy-and-paste">5.4 Cut, Copy, and Paste</h2>
+
+<ul>
+<li>Paste previous, next, and show clipboard history</li>
+<li>Paste with/without re-indent</li>
+<li>Configuring how to re-indent</li>
+<li>Duplicating text (<kbd class='keyEquivalent'>⌃⇧D</kbd>)</li>
+<li>Kill and yank</li>
+</ul>
+
+<h2 id="buffer-completion">5.5 Buffer Completion</h2>
+
+<p>The current word adfix is taken into consideration when hitting escape.</p>
+
+<p>For example in this case:</p>
+
+<pre><code>enum mark_t { kErrorMarkType, kWarningMarkType };
+mark_t m = ‸MarkType;
+</code></pre>
+
+<p>The resulting line will become:</p>
+
+<pre><code>mark_t m = kWarning‸MarkType;
+</code></pre>
+
+<p>See also: Completion Commands, character classes</p>
+
+<h2 id="macros">5.6 Macros</h2>
+
+<ul>
+<li>Record, replay, and save</li>
+</ul>
+
+<h2 id="auto-indenting-text">5.7 Auto-indenting Text</h2>
+
+<ul>
+<li>How to configure</li>
+<li>How to disable</li>
+<li>Smart tab behavior</li>
+</ul>
+
+<h2 id="transposing-text">5.8 Transposing Text</h2>
+
+<ul>
+<li><kbd class='keyEquivalent'>⌃T</kbd>: Swap characters / lines</li>
+<li><kbd class='keyEquivalent'>⌃T</kbd>: Reverse characters in line / lines in selection</li>
+<li><kbd class='keyEquivalent'>⌃T</kbd>: Cycle (swap) selected words</li>
+</ul>
+
+<h2 id="spell-checking">5.9 Spell Checking</h2>
+
+<ul>
+<li>Selecting spelling suggestions (<kbd class='keyEquivalent'>⌥F2</kbd>)</li>
+<li>Disabling spell checking for scopes</li>
+<li>Setting default language for folders/files</li>
+<li>Correcting misspelled words (<kbd class='keyEquivalent'>⌥F2</kbd> or right-click)</li>
+</ul>
+
+<h2 id="shell-command-filters">5.10 Shell Command Filters</h2>
+
+<ul>
+<li>Filtering through shell command (<kbd class='keyEquivalent'>⌘|</kbd>)</li>
+</ul>
+
+<h2 id="dropping-items">5.11 Dropping Items</h2>
+
+<ul>
+<li>Meaning of dragging (to document) with modifiers</li>
+<li>See Also: Drag Commands</li>
+</ul>
+</section>
+<section>
+
+<h1 id="snippets">6 Snippets</h1>
+
+<p>A snippet is a piece of text that you would like to insert in your document. It can include code to run at insertion time, variables (like selected text), tab stops/placeholders for missing information (which you can tab through after insertion) and perform transformations on the data which you enter in the placeholders.</p>
+
+<p>Snippets are created in the <a href="bundles.html#bundle-editor">bundle editor</a> and are often assigned a <a href="bundles.html#tab-trigger">tab trigger</a> for easy insertion.</p>
+
+<h2 id="grammar">6.1 Grammar</h2>
+
+<p>Snippets support the following constructs:</p>
+
+<pre><code>$«int»
+${«int»}
+${«int»:«any»}
+${«int»/«regexp»/«format»/«options»}
+${«int»|«choice 1»,…,«choice n»|}
+`«code»`
+«format»
+</code></pre>
+
+<p>In the above, <code>«format»</code> is a <a href="references.html#format-string">format string</a> and <code>«any»</code> refers to any of the above.</p>
+
+<p>The next sections will give examples of each of the above.</p>
+
+<h2 id="plain-text">6.2 Plain Text</h2>
+
+<p>In the simplest case, you can use snippets to insert text that you do not want to type again and again, either because you type it a lot, or because the actual text to insert is hard to remember (like your bank account details or the HTML entities for the Apple modifier keys).</p>
+
+<p>If you use snippets to insert plain text there is only one thing you should be aware of: <code>$</code> and <code>`</code> are reserved characters. So if you want to insert one of these, prefix it with an escape (i.e. <code>\$</code>). An escape not followed by one of these two characters (or followed by another escape) will be inserted as a literal character.</p>
+
+<h2 id="variables">6.3 Variables</h2>
+
+<p>You can use any of TextMate’s defined <a href="snippets.html#variables">variables</a> by prefixing the name of the variable with <code>$</code>. All the normal dynamic variables are supported, the most useful probably being <code>TM_SELECTED_TEXT</code>. If for example we want to create a snippet which wraps the selection in a LaTeX <code>\textbf</code> command, we can make a snippet which is:</p>
+
+<pre><code>\textbf{$TM_SELECTED_TEXT}
+</code></pre>
+
+<p>If no text is selected the variable will not be set, so nothing will be inserted in its place. We can provide a default value by using <a href="references.html#format-string">format string</a> syntax: <code>${«variable»:«default value»}</code>. For example:</p>
+
+<pre><code>\textbf{${TM_SELECTED_TEXT:no text was selected}}
+</code></pre>
+
+<p>The default value can itself contain variables or shell code. If you want the default text to contain a <code>}</code>, you need to escape it. But all other characters are used verbatim.</p>
+
+<p>Variables also support <a href="references.html#regular-expression">regular expression</a> replacements using this syntax: <code>${«variable»/«regexp»/«format»/«options»}</code>. If the variable is not set the replacement will be performed on the empty string. For example, to prepend a bullet to each non-empty line in the selection (and insert that) we can do:</p>
+
+<pre><code>${TM_SELECTED_TEXT/^.+$/• $0/g}
+</code></pre>
+
+<h2 id="interpolated-shell-code">6.4 Interpolated Shell Code</h2>
+
+<p>You can use backticks to have shell code executed when the snippet is inserted. The result from running the code gets inserted into the snippet, though with the last newline in the result removed (if present). So for example to create a snippet that wraps the selection in an HTML link, where the URL of that link comes from the clipboard, we can do:</p>
+
+<pre><code>&lt;a href=&quot;`pbpaste`&quot;&gt;$TM_SELECTED_TEXT&lt;/a&gt;
+</code></pre>
+
+<p>Since this is normal shell code, we can write a small program. For example we can let it verify that the clipboard contains only a single line of text like this:</p>
+
+<pre><code>&lt;a href=&quot;`
+    if [[ $(pbpaste|wc -l) -eq 0 ]]
+        then pbpaste
+        else echo http://example.com/
+    fi
+`&quot;&gt;$TM_SELECTED_TEXT&lt;/a&gt;
+</code></pre>
+
+<p>Inside shell code, the only character you need to escape is the backtick.</p>
+
+<h2 id="tab-stops">6.5 Tab Stops</h2>
+
+<p>After insertion, the caret will be placed after the last character of the snippet. This is not always desirable and we can change that by using <code>$0</code> to mark where we want the caret to be. So if for example we make an HTML <code>div</code>-snippet and want the caret to end between the opening and closing tags, we could make it like this:</p>
+
+<pre><code>&lt;div&gt;
+    $0
+&lt;/div&gt;
+</code></pre>
+
+<p>Often though we want to fill in text in several places in the snippet. Multiple tab stops can be provided by inserting <code>$1</code>-<code>$n</code>. The caret will start at <code>$1</code>, then when pressing tab it will move to <code>$2</code> and <code>$3</code> on next tab etc. until there are no more tab stops. If you do not explicitly set <code>$0</code>, the caret will be at the end of the snippet.</p>
+
+<p>So we could for example change the above to:</p>
+
+<pre><code>&lt;div$1&gt;
+    $0
+&lt;/div&gt;
+</code></pre>
+
+<p>This allows us to fill in an argument and then tab on to <code>$0</code>.</p>
+
+<h2 id="placeholders">6.6 Placeholders</h2>
+
+<p>Like variables, tab stops can also have default values (and are generally referred to as placeholders when they do). The syntax is the same: <code>${«tab stop»:«default value»}</code>. And the default value can contain both text, shell code and other placeholders. So we can refine the previous example further:</p>
+
+<pre><code>&lt;div${1: id=&quot;${2:some_id}&quot;}&gt;
+    $0
+&lt;/div&gt;
+</code></pre>
+
+<p>Inserting this snippet will insert a <code>div</code> tag with the <code>id</code> argument selected and we can then decide either to overtype the argument (i.e. delete it) and press tab again to reach <code>$0</code>, or we can press tab immediately to get to the second tab stop (the value part of the argument) and edit that.</p>
+
+<p>When you edit the placeholder text, any embedded tab stops will be removed.</p>
+
+<h2 id="mirrors">6.7 Mirrors</h2>
+
+<p>There are times when you need to provide the same value several places in the inserted text and in these situations you can re-use the tab stop to signal that you want it mirrored at that location. So for example to create a LaTeX environment with a snippet, we can use:</p>
+
+<pre><code>\begin{${1:enumerate}}
+    $0
+\end{$1}
+</code></pre>
+
+<p>After inserting this snippet, <code>enumerate</code> will be selected and if we edit it, the changes will be reflected in the <code>\end</code> part as well.</p>
+
+<h2 id="transformations">6.8 Transformations</h2>
+
+<p>There are situations where we want our placeholder text mirrored but with slight changes or where we want some text to appear depending on the value/presence of a placeholder.</p>
+
+<p>We can accomplish this by doing a regular expression substitution on the placeholder text (when mirroring it). The syntax for this is: <code>${«tab stop»/«regexp»/«format»/«options»}</code>.</p>
+
+<p>As an example, the Objective-C getter/setter methods (prior to the <code>@property</code> keyword) often look like this (in the <a href="http://ticket.macromates.com/show?ticket_id=E11D9EAF">thread-unsafe form</a>):</p>
+
+<pre><code>- (id)foo
+{
+    return foo;
+}
+
+- (void)setFoo:(id)aValue
+{
+    [foo autorelease];
+    foo = [aValue retain];
+}
+</code></pre>
+
+<p>In the <a href="references.html#format-string">format string</a> we can use <code>${«var»:/upcase}</code> to uppercase the matched character, so a snippet that only asks for the name of the instance variable once could look like this:</p>
+
+<pre><code>- (${1:id})${2:foo}
+{
+    return $2;
+}
+
+- (void)set${2/./${0:/upcase}/}:($1)aValue
+{
+    [$2 autorelease];
+    $2 = [aValue retain];
+}
+</code></pre>
+
+<p>We can also use conditional insertions in the format string (<code>${«var»:+«if-set»}</code>) to make decisions. For example if we create a snippet for a method we can let the return type decide whether or not the method should include a <code>return</code> statement like this:</p>
+
+<pre><code>- (${1:void})${2:methodName}
+{${1/void$|(.+)/${1:+\n\treturn nil;}/}
+}
+</code></pre>
+
+<p>Here we match placeholder 1 against <code>void</code> or anything (<code>.+</code>) and put the latter match in capture register 1. Then only if we did match something (other than <code>void</code>) will we insert a newline, tab and the <code>return nil;</code> text.</p>
+
+<h2 id="multiple-choices">6.9 Multiple Choices</h2>
+
+<p>Sometimes a placeholder can only take a limited number of values in which case we may want to show a menu with these choices.</p>
+
+<p>This can be done with the <code>${«int»|«choice 1»,…,«choice n»|}</code> syntax.</p>
+
+<p>For example:</p>
+
+<pre><code>color: ${1|red,green,blue|}
+</code></pre>
+</section>
+<section>
+
+<h1 id="commands">7 Commands</h1>
+
+<ul>
+<li>Commands with non-zero exit code treated as error</li>
+<li>Current working directory</li>
+</ul>
+
+<h2 id="search-path">7.1 Search Path</h2>
+
+<h3 id="required-commands">7.1.1 Required Commands</h3>
+
+<pre><code>requiredCommands = (
+    command = 'clang-format';
+    variable = 'TM_CLANG_FORMAT';
+    locations = ( '/usr/local/bin/clang-format' );
+    moreInfoURL = 'http://clang.llvm.org/docs/ClangFormat.html';
+);
+</code></pre>
+
+<h2 id="drag-commands">7.2 Drag Commands</h2>
+
+<ul>
+<li>Dropping multiple files</li>
+</ul>
+
+<h2 id="writing-commands">7.3 Writing Commands</h2>
+
+<ul>
+<li>Use <code>TM_«tool»</code> and use it without quotes if there is a chance the tool might be multiple tools.</li>
+</ul>
+
+<h3 id="executor-commands">7.3.1 Executor Commands</h3>
+
+<p>The command can read the document content via stdin, that will be the current state of the document.</p>
+
+<p>Do you wish for the command to never save the document? There are a few options, but it depends on your goal.</p>
+
+<p>For example, if you wish the command to fire after a save operation (how it is presently setup, although by overloading the <kbd class='keyEquivalent'>⌘S</kbd> key, which we discourage) then you can set the semantic class to ‘callback.document.did-save’ then it is automatically called after each save, and can read the document via the <code>TM_FILEPATH</code> environment variable (note that if you do this, you should make sure that “Save” is set to “Nothing” to avoid a loop).</p>
+
+<p>If you wish to run the command decoupled from any potential save, then you should read the document from stdin. We do have some ruby support code that most of the run commands use, it will save an untitled document to a temporary file and setup <code>TM_FILEPATH</code> accordingly, meaning that the command can be assert that <code>TM_FILEPATH</code> always points to an up-to-date file.</p>
+
+<p>A simple example of this is:</p>
+
+<pre><code>#!/usr/bin/env ruby18 -wKU
+require &quot;#{ENV['TM_SUPPORT_PATH']}/lib/tm/save_current_document&quot;
+
+TextMate.save_if_untitled('js')
+# use ENV['TM_FILEPATH']
+</code></pre>
+
+<p>The argument to <code>TextMate.save_if_untitled</code> is the extension to use for the temporary file (and can be left out).</p>
+
+<p>When using <code>TextMate.save_if_untitled</code> the command should set “Save” to “</p>
+</section>
+<section>
+
+<h1 id="html-output">8 HTML Output</h1>
+
+<ul>
+<li>Searching via <kbd class='keyEquivalent'>⌘F</kbd> (works)</li>
+<li>Clipboard history (also applies to HTML output)</li>
+<li>See also: <a href="printing.html#printing-processed-output">Printing Processed Output</a>.</li>
+</ul>
+
+<h2 id="html-output-theme">8.1 HTML Output Theme</h2>
+
+<ul>
+<li>Themes bundle, <code>TM_THEME_PATH</code>.</li>
+</ul>
+
+<h2 id="javascript-api">8.2 JavaScript API</h2>
+
+<p>The <code>TextMate</code> object has the following methods available:</p>
+
+<pre><code>system()                 See below for information.
+log(msg)                 Adds a message to the system console (using NSLog).
+open(path, options)      Opens a file on disk as a document in the current application.
+                         options may be either a selection range string or a (line) number.
+</code></pre>
+
+<p>In addition, these properties are exposed:</p>
+
+<pre><code>busy       (boolean)     The busy spinner in the output window will be displayed when this is true.
+progress   (double, 0-1) Controls the value displayed in the determinate progress indicator.
+</code></pre>
+
+<h3 id="textmatesystem">8.2.1 TextMate.system()</h3>
+
+<p>Also see <a href="http://developer.apple.com/documentation/AppleApplications/Conceptual/Dashboard_ProgTopics/Articles/CommandLine.html">http://developer.apple.com/documentation/AppleApplications/Conceptual/Dashboard_ProgTopics/Articles/CommandLine.html</a>.</p>
+
+<h3 id="synchronous-operation">8.2.2 Synchronous Operation</h3>
+
+<p>Example:</p>
+
+<pre><code>obj = TextMate.system(&quot;/usr/bin/id -un&quot;, null);
+</code></pre>
+
+<p>Result is an object with following properties:</p>
+
+<pre><code>outputString:  The output of the command, as placed on stdout.
+errorString:   The output of the command, as placed on stderr.
+status:        The exit status of the command.
+</code></pre>
+
+<h3 id="asynchronous-operation">8.2.3 Asynchronous Operation</h3>
+
+<p>Example:</p>
+
+<pre><code>obj = TextMate.system(&quot;/usr/bin/id -un&quot;, handler);
+</code></pre>
+
+<p>Handler is called when the command is finished and given an object with the following properties:</p>
+
+<pre><code>outputString:  The last output of the command, as placed on stdout.
+errorString:   The last output of the command, as placed on stderr.
+status:        The exit status of the command.
+</code></pre>
+
+<p>Result is an object with following properties/methods:</p>
+
+<pre><code>outputString:  The current string written to stdout (standard output) by the command.
+errorString:   The current string written to stderr (standard error output) by the command.
+status:        The command’s exit status, as defined by the command.
+onreadoutput:  A function called whenever the command writes to stdout. The handler must accept a single argument; when called, the argument contains the current string placed on stdout.
+onreaderror:   A function called whenever the command writes to stderr. The handler must accept a single argument; when called, the argument contains the current string placed on stderr.
+cancel():      Cancels the execution of the command.
+write(string): Writes a string to stdin (standard input).
+close():       Closes stdin (EOF).
+</code></pre>
+</section>
+<section>
+
+<h1 id="showing-dialogs">9 Showing Dialogs</h1>
+
+<h2 id="dialog">9.1 Dialog</h2>
+
+<h2 id="commit-window">9.2 Commit Window</h2>
+</section>
+<section>
+
+<h1 id="printing">10 Printing</h1>
+
+<h2 id="printing-plain-text">10.1 Printing Plain Text</h2>
+
+<p>If you wish to print text or produce a PDF from your document then you can select <em>File → Print…</em> (<kbd class='keyEquivalent'>⌘P</kbd>) to bring up the system’s standard printing sheet.</p>
+
+<p>Text will be syntax highlighted using the theme selected but since TextMate does not do background fills during printing, you should avoid selecting a theme that is made to draw light text on a dark background.</p>
+
+<p>The current document font, with a point size of 11, is used for printing. You can adjust the scale factor if you wish to change the text size. To change the font itself you need to change the document font before bringing up the print dialog, this is done using the font panel available as <em>View → Font → Show Fonts</em>.</p>
+
+<p>Margins can be increased by selecting <code>Manage Custom Sizes…</code> from the <code>Paper Size</code> pop-up button. Create a new size with the same dimensions as your normal paper and increase the values for the non-printable area.</p>
+
+<p>If you miss some of the options mentioned above then you may need to select <code>Show Details</code>.</p>
+<!-- TODO Document which global styles can affect printing -->
+
+<h2 id="printing-processed-output">10.2 Printing Processed Output</h2>
+
+<p>Some text formats, like Markdown and reStructuredText, are meant to be converted into other formats, often HTML. TextMate normally offers a preview action (bound to <kbd class='keyEquivalent'>⌃⌥⌘P</kbd>) which will show the styled text in an <a href="html-output.html#html-output">HTML output</a> window.</p>
+
+<p>After the output window appears, you can print the content using the standard printing sheet available by selecting <em>File → Print…</em> (<kbd class='keyEquivalent'>⌘P</kbd>).</p>
+
+<p>Output is using the print styles from the current <a href="html-output.html#html-output-theme">HTML output theme</a>.</p>
+
+<p>This functionality is also available for generated PDF documents created by actions like <em>Bundles → LaTeX → Typeset &amp; View</em> (<kbd class='keyEquivalent'>⌘R</kbd>).</p>
+</section>
+<section>
+
+<h1 id="saving-files">11 Saving Files</h1>
+
+<ul>
+<li>Brace expansion: <code>source.{cc,h}</code></li>
+<li>Extended attributes (how to disable)</li>
+<li>Saving when TextMate loses focus</li>
+<li>Export commands and will/did save callbacks</li>
+</ul>
+</section>
+<section>
+
+<h1 id="bundles">12 Bundles</h1>
+
+<ul>
+<li>Installing bundles (Preferences → Bundles)</li>
+<li>Locations and delta format</li>
+<li>Distributing bundles</li>
+<li>Getting your bundle added to the index</li>
+<li>Reverting to default bundles</li>
+</ul>
+
+<h2 id="finding-bundle-items">12.1 Finding Bundle Items</h2>
+
+<ul>
+<li>Title/key equivalent search (<kbd class='keyEquivalent'>⌃⌘T</kbd>)</li>
+<li>Editing found item (<kbd class='keyEquivalent'>⌥↩</kbd>)</li>
+</ul>
+
+<h2 id="general-actions">12.2 General Actions</h2>
+
+<ul>
+<li>Diff actions</li>
+<li>Math actions</li>
+<li>TODO actions</li>
+<li>Paste Online</li>
+<li>Sorting</li>
+<li>See Also: Version Control</li>
+</ul>
+
+<h2 id="source-actions">12.3 Source Actions</h2>
+
+<ul>
+<li>Build/Run: Running untitled documents (<kbd class='keyEquivalent'>⌘B</kbd>/<kbd class='keyEquivalent'>⌘R</kbd>)</li>
+<li>Documentation for Word (<kbd class='keyEquivalent'>⌃H</kbd>)</li>
+<li>Validate Syntax (<kbd class='keyEquivalent'>⌃⇧V</kbd>)</li>
+<li>Commenting/uncommenting: How to configure</li>
+<li>Toggle single/double quotes or <code>camelCase</code>/<code>snake_case</code></li>
+<li>Aligning assignments</li>
+<li>Insert line-terminator and/or newline</li>
+</ul>
+
+<h2 id="bundle-editor">12.4 Bundle Editor</h2>
+
+<ul>
+<li>How to create new items: <kbd class='keyEquivalent'>⌘N</kbd></li>
+</ul>
+
+<h2 id="tab-trigger">12.5 Tab Trigger</h2>
+
+<h2 id="key-equivalent">12.6 Key Equivalent</h2>
+
+<h2 id="requirements">12.7 Requirements</h2>
+
+<ul>
+<li>Requiring shell commands</li>
+<li>Requiring other bundles</li>
+</ul>
+
+<p>The following can be added to a bundle item (setting it for a bundle’s <code>info.plist</code> is equivalent to setting it for each item in that bundle):</p>
+
+<pre><code>require = ( { name = «name»; uuid = «uuid»; }, … );
+</code></pre>
+
+<p>The UUID is that of the bundle or bundle item required. The name is the name under which the required item should be available (more or less), this only make sense when the UUID is that of a grammar or bundle, see details below. The name defaults to the bundle’s or bundle item’s name, except for grammars, where it is the root scope for the grammar.</p>
+
+<p>If the UUID is that of a bundle item, TextMate ensures that the item and bundle containing it, when the item with the requirement is “executed”, is available.</p>
+
+<p>If the UUID is that of a bundle, TextMate ensures that the bundle is available and will set <code>TM_«name»_BUNDLE_SUPPORT</code> when “executing” the item with the requirement. It will uppercase the name provided.</p>
+
+<h3 id="examples">12.7.1 Examples</h3>
+
+<p>To be able to use <code>include = 'source.c';</code> in the Objective-C grammar, it should have the following requirement:</p>
+
+<pre><code>require = (
+   {  name = 'source.c';
+      uuid = '25066DC2-6B1D-11D9-9D5B-000D93589AF6';
+   }
+)
+</code></pre>
+
+<p>The Subversion bundle’s <code>info.plist</code> could contain the following:</p>
+
+<pre><code>require = (
+   {  name = 'Dialog';
+      uuid = 'F985E884-C6F4-4FB1-B7F6-447A72ECF267';
+   }
+)
+</code></pre>
+
+<p>This ensures that the bundle providing a ruby interface to the Dialog system is available and that commands in the Subversion bundle written in ruby can do:</p>
+
+<pre><code>require &quot;#{ENV['TM_DIALOG_BUNDLE_SUPPORT']}/lib/ui&quot;
+⋮
+TextMate::UI.show_menu(…)
+</code></pre>
+</section>
+<section>
+
+<h1 id="presentation">13 Presentation</h1>
+
+<ul>
+<li>Indented soft wrap</li>
+<li>Changed font sizes</li>
+<li>See also: Web Output Themes</li>
+<li>Foldings</li>
+</ul>
+</section>
+<section>
+
+<h1 id="language-grammars">14 Language Grammars</h1>
+
+<ul>
+<li>Begin/while rules</li>
+<li>Including from other grammar repositories</li>
+<li><code>$base</code> and <code>$self</code></li>
+<li>The meaning of <code>\G</code></li>
+<li>Rules on captures</li>
+</ul>
+
+<h2 id="injected-grammars">14.1 Injected Grammars</h2>
+
+<ul>
+<li>TODO, RFC, URLs</li>
+<li>How to open URLs (<kbd class='keyEquivalent'>⌅</kbd> or fn-return)</li>
+</ul>
+
+<h2 id="file-type-detection">14.2 File Type Detection</h2>
+</section>
+<section>
+
+<h1 id="scopes">15 Scopes</h1>
+
+<ul>
+<li>Introduction to scopes blog post</li>
+</ul>
+
+<h2 id="attribute-scope">15.1 Attribute Scope</h2>
+
+<ul>
+<li>SCM scopes: <code>attr.scm.*</code>.</li>
+<li>Build system scopes (Makefile, Xcode, etc.): <code>attr.project.*</code>.</li>
+<li><code>attr.rev-path</code>, <code>attr.os-version</code>.</li>
+<li><code>attr.untitled</code>, <code>attr.file.unknown-encoding</code>, <code>attr.unknown-filetype</code>.</li>
+</ul>
+
+<h2 id="dynamic-scope">15.2 Dynamic Scope</h2>
+
+<ul>
+<li><p>Left scope: <code>dyn.caret.begin.(line|document)</code>, right scope: <code>dyn.caret.end.(line|document)</code>.</p></li>
+<li><p>Misspelled words: <code>dyn.misspelled</code>.</p></li>
+<li><p>Mouse-clicks: <code>dyn.modifier.(shift|control|option|command)</code>.</p></li>
+<li><p>The scope contains <code>dyn.selection</code> and/or <code>dyn.caret.*</code> based on the following rules:</p>
+
+<ul>
+<li>If there is one or more selections: <code>dyn.selection</code>.</li>
+<li>If there is a single zero-width selection: <code>dyn.caret.mixed.columnar</code>.</li>
+<li>If there are multiple carets and/or selections: <code>dyn.caret.mixed</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section>
+
+<h1 id="variables">16 Variables</h1>
+
+<h2 id="static-variables">16.1 Static Variables</h2>
+
+<h2 id="file-variables">16.2 File Variables</h2>
+
+<h2 id="scope-variables">16.3 Scope Variables</h2>
+
+<h2 id="dynamic-variables">16.4 Dynamic Variables</h2>
+</section>
+<section>
+
+<h1 id="settings">17 Settings</h1>
+
+<h2 id="file-settings">17.1 File Settings</h2>
+
+<ul>
+<li><code>.tm_properties</code></li>
+<li>Recording defaults (<code>Global.tmProperties</code>)</li>
+<li>Section selectors: scope selector or glob. Multiple values.</li>
+<li>Precedence.</li>
+</ul>
+
+<p>The grammar used to parse the <code>.tm_properties</code> files are as below. Whitespace (in the form of spaces or tabs) is allowed between elements.</p>
+
+<pre><code>file:          ( «line» )*
+line:          ( «comment» | ( «section» | «assignment» )? ( «comment» )? ) ( '\n' | EOF )
+section:       '[' «name» ( &quot;;&quot; «name» )* ']'
+name:          ( /[^\] \t\n]/ | /\\[\] \t\n\\]/ )+
+assignment:    «key» '=' «value»
+key:           ( /[^= \t\n]/ | /\\[= \t\n\\]/ )+
+value:         ( «single_string» | «double_string» | «bare_string» )
+single_string: &quot;'&quot; ( /[^']/ | /\\['\\]/ )* &quot;'&quot;
+double_string: '&quot;' ( /[^&quot;]/ | /\\[&quot;\\]/ )* '&quot;'
+bare_string:   ( /[^ \t\n]/ | /\\[ \t\n\\]/ )+
+comment:       '#' ( /[^\n]/ )*
+</code></pre>
+
+<h3 id="filtering-files">17.1.1 Filtering Files</h3>
+
+<ul>
+<li>File chooser</li>
+<li>File browser</li>
+<li>Folder search</li>
+</ul>
+
+<h2 id="scope-settings">17.2 Scope Settings</h2>
+
+<ul>
+<li>Pattern based highlight pairs (for movement)</li>
+<li>Indent based foldings</li>
+<li>Character classes (for completion, word movement, etc.)</li>
+<li>Indented soft wrap</li>
+</ul>
+
+<h2 id="hidden-settings">17.3 Hidden Settings</h2>
+
+<ul>
+<li>line height, anti-alias, extended attributes, etc.</li>
+</ul>
+
+<h2 id="key-bindings">17.4 Key Bindings</h2>
+
+<ul>
+<li>Location of key binding files</li>
+<li>Keybinding syntax</li>
+<li>Indent aware movement actions</li>
+<li>Find and extend selection actions</li>
+</ul>
+</section>
+<section>
+
+<h1 id="concepts">18 Concepts</h1>
+
+<h2 id="proxy-item">18.1 Proxy Item</h2>
+
+<ul>
+<li>SCM bundle</li>
+<li>Generic build action etc. (work in progress)</li>
+</ul>
+
+<h2 id="semantic-class">18.2 Semantic Class</h2>
+
+<ul>
+<li>Import/export commands, e.g. Binary Property List</li>
+<li>Will/did save callbacks, e.g. Make Script Executable</li>
+</ul>
+
+<h2 id="encoding">18.3 Encoding</h2>
+
+<ul>
+<li>Byte order mark / endian: UTF&#8211;8, UTF&#8211;16, UTF&#8211;32.</li>
+<li><code>.tm_properties</code>: <code>attr.file.unknown-encoding</code>.</li>
+<li>Extended attributes: <code>com.apple.Encoding</code>.</li>
+<li>Line endings</li>
+</ul>
+
+<p>TextMate will do a few tests against your file:</p>
+
+<ol>
+<li>Does it have an UTF&#8211;8/16/32 BE/LE BOM?
+<em>Do not take this to mean that UTF&#8211;8 BOMs are fine!</em></li>
+<li>Does it have a <code>com.apple.TextEncoding</code> extended attribute?</li>
+<li>Does it have an <code>encoding</code> setting via <code>.tm_properties</code>?</li>
+<li>Is it valid ASCII/UTF&#8211;8?</li>
+</ol>
+
+<p>If all of these tests fail, it will ask you to pick the proper encoding.</p>
+</section>
+<section>
+
+<h1 id="references">19 References</h1>
+
+<h2 id="scope-selector">19.1 Scope Selector</h2>
+
+<p>The scope selector syntax is as follows:</p>
+
+<pre><code>atom:         «string» | '*'
+scope:        «atom» ('.' «atom»)*
+path:         '^'? «scope» ('&gt;'? «scope»)* '$'?
+group:        '(' «selector» ')'
+filter:       (&quot;L:&quot;|&quot;R:&quot;|&quot;B:&quot;) («group» | «path»)
+expression:   '-'? («filter» | «group» | «path»)
+composite:    «expression» ([|&amp;-] «expression»)*
+selector:     «composite» (',' «composite»)*
+</code></pre>
+
+<ul>
+<li>Left/right scope matching</li>
+<li>Begin/end anchoring, ignoring attribute scopes</li>
+<li>Wildcard matching</li>
+<li>Descendent selector</li>
+</ul>
+
+<h2 id="format-string">19.2 Format String</h2>
+
+<pre><code>$«var»
+${«var»}
+${«var»:?«if»:«else»}
+${«var»:+«if»}
+${«var»:-«else»}
+${«var»:«else»}
+${«var»/«regexp»/«format»/«options»}
+${«var»:[/upcase][/downcase][/capitalize][/asciify]}
+
+(?«var»:«if»:«else»)
+(?«var»:«if»)
+
+\U, \L, \E, \u, \l
+\t, \r, \n, \x{HHHH}, \xHH
+</code></pre>
+
+<ul>
+<li>Used for: grammar names, <code>.tm_properties</code> values, Preferences → Variables, replacement strings</li>
+</ul>
+
+<p>For nested replacements, use named captures as variables are inherited.</p>
+
+<h2 id="glob-string">19.3 Glob String</h2>
+
+<pre><code>\«char»         -- Literal «char»
+?               -- Match one character
+*               -- Match zero or more characters¹
+**              -- Match zero or more path components
+{«a»,«b»,«c»}   -- Match «a» or «b» or «c»
+[«a»«b»«c»]     -- Match an «a», «b» or «c» character
+[«a»-«b»]       -- Match one character in the range «a»-«b»
+[^«a»-«b»]      -- Match one character not in the range «a»-«b»
+~«a» or !«a»    -- Do not match «a», e.g. to match all but *.h
+                   files under src/ use `src/**~*.h`
+</code></pre>
+
+<p>Negations (<code>~</code> or <code>!</code>) can be followed by more negations. E.g. to exclude both <code>lib*.a</code> and <code>*.o</code> use:</p>
+
+<pre><code>~lib*.a~*.o
+</code></pre>
+
+<p>Braces can be nested and contain other glob characters. Example:</p>
+
+<pre><code>{*.{cc,mm,h},target,Makefile,.tm_properties}
+</code></pre>
+
+<p>Will match these files:</p>
+
+<pre><code>source.cc
+source.mm
+source.h
+target
+Makefile
+.tm_properties
+</code></pre>
+
+<p>¹ The asterisk will not match slashes nor a leading period.</p>
+
+<ul>
+<li>Used in <code>.tm_properties</code>, find in folder</li>
+</ul>
+
+<h2 id="selection-string">19.4 Selection String</h2>
+
+<pre><code>selection    = «range» ('&amp;' «range»)*
+range        = «pos» | «normal_range» | «column_range»
+pos          = «line» (':' «column»)? ('+' «offset»)?
+normal_range = «pos» '-' «pos»
+column_range = «pos» 'x' «pos»
+line         = [1-9][0-9]*
+column       = [1-9][0-9]*
+offset       = [1-9][0-9]*
+</code></pre>
+
+<p>This can be used with <code>mate -l</code>, <em>Go to Line…</em>, and the <kbd class='keyEquivalent'>⌘T</kbd> dialog (by putting <code>:«selection string»</code> after the file name) — as for the latter, if a string on the find clipboard has this format, it will be the default value in <kbd class='keyEquivalent'>⌘T</kbd>, this is useful if you have a line in Terminal like:</p>
+
+<pre><code>main.cc:32: warning: no return statement.
+</code></pre>
+
+<p>You can then select <code>main.cc:32</code> press <kbd class='keyEquivalent'>⌘E</kbd> and jump to Avian and press <kbd class='keyEquivalent'>⌘T</kbd> followed by <kbd class='keyEquivalent'>↩</kbd> (one shortcoming is that <kbd class='keyEquivalent'>⌘T</kbd> doesn’t show the currently open file, so it will only work if <code>main.cc</code> is not already the active file).</p>
+
+<h2 id="modified-property-list">19.5 Modified Property List</h2>
+
+<p>See TextMate 1.x manual.</p>
+
+<h2 id="regular-expression">19.6 Regular Expression</h2>
+</section>
+<section>
+
+<h1 id="updating">20 Updating</h1>
+
+<p>By default TextMate will prompt you when a new version is available.</p>
+
+<p>The <em>Software Update</em> page available via <em>TextMate → Preferences…</em> (<kbd class='keyEquivalent'>⌘,</kbd>) allows you to change <code>Watch For</code> to <em>Nightly Builds</em> which will increase the frequency, despite its name though, the there is no new build every night.</p>
+
+<p>If you switch to <em>Nightly Builds</em> and there is an issue with one of the builds, you can switch back to <em>Normal Releases</em> and select <code>Check Now</code>, which then allows you to downgrade.</p>
+
+<p>You can also find older builds in <code>~/Library/Caches/com.macromates.TextMate</code>.</p>
+</section>
+
+</body>
+</html>
