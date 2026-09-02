@@ -11,10 +11,8 @@ Each future release adds its own directory by copying the previous version's for
 
 ## Current state of the tree
 
-`2.0/` holds the manual as last deployed, compiled HTML containing prose that was edited after the markdown sources were last touched. Nothing regenerates or writes into it.
-
-The markdown source and its tooling live at the repository root (`pages/`, `bin/`, `Makefile`) and are what future versions build from. The source lags `2.0/`: recovering the newer prose from the deployed HTML back into `pages/` comes before any other work here, and the recovery is proved by rebuilding and comparing against `2.0/`. Until then, `make` produces stale output.
-
 `1/` holds the TextMate 1.x manual as archived from macromates.com: compiled HTML pages and their images, preserved exactly as served. The pages never had a markdown source, and their stylesheet links point at the original site, so they read best as content rather than render faithfully offline. Extracting them into a source format is future work.
 
-Shared tooling stays at the repository root and serves every version directory.
+`2.0/` holds the TextMate 2.0 manual as last deployed, compiled HTML containing prose that was edited after the markdown sources were last touched. `2.0/markdown/` holds those markdown sources. The markdown lags the HTML, so recovering the newer prose from the HTML into the markdown comes before building anything new from it.
+
+This repository is content only. Website tooling, when it exists, lives with the website.
