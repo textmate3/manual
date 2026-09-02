@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Working With Multiple Files — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="working_with_multiple_files.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 1;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="preface.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Preface</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="navigation_overview.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Navigation / Overview</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="working_with_multiple_files">Working With Multiple Files</h1>
+
+<h2 id="creating_projects_with_tabs">Creating Projects (With Tabs)</h2>
+
+<p>In the current version of TextMate (1.5) file tabs are only supported when a project is created. Fortunately it is easy to create a project, namely by selecting File → New Project (⌃⌘N).</p>
+
+<p>This opens a window which looks like the one below.</p>
+
+<p><img src="../images/project_window.png" width="326" height="214" alt="Project Window" /></p>
+
+<p>It is possible to add files either by dragging them to the (project) drawer, or use the “Add Existing Files…” action in the project drawers action menu (the one with the gear icon).</p>
+
+<p>Another way to create a project is by dragging files directly onto the TextMate application icon (shown e.g. in the dock). This is a shortcut for creating a new project consisting of these files.</p>
+
+<p>One minor detail is that when creating a project this way, you will not be asked if you want to save the project, when it is closed.</p>
+
+<p>The advantage of saving a project is to maintain state (e.g. which files were open) and to be able to quickly re-open a particular set of files. If you leave a (saved) project open when you quit TextMate, it will automatically re-open that project the next time you launch TextMate.</p>
+
+<p>It is also possible to <a href="using_textmate_from_terminal.html">create projects from the terminal</a> e.g. using the <code>mate</code> shell command.</p>
+
+<h3 id="auto-updating_projects">Auto-Updating Projects</h3>
+
+<p>When you want to have your project mimic the files and folders on disk, you can drag a folder either onto the TextMate application icon, or into the project drawer.</p>
+
+<p>TextMate will then create a <em>folder reference</em> where it automatically updates the contents of the folder when it changes on disk.</p>
+
+<p><img src="../images/project_window_with_tabs.png" width="330" height="226" alt="Project Window With Tabs" /></p>
+
+<p>Currently updating is done when TextMate regains focus and can be slow for some network mounted disks, in which case you may want to settle for only adding individual files to the project (which can be grouped and re-ordered manually to mimic the structure on disk).</p>
+
+<p><em>The refresh delay for network mounted disks will be addressed in a future release.</em></p>
+
+<h3 id="filtering_unwanted_files">Filtering Unwanted Files</h3>
+
+<p>When using folder references, you may want to have certain files or folders excluded from the project. This can be done by changing the file and folder patterns found in Preferences → Advanced → Folder References.</p>
+
+<p><img src="../images/folder_reference_patterns.png" width="239" height="213" alt="Folder Reference Patterns" /></p>
+
+<p>These are regular expressions which are matched against the full path of each file and folder. If the pattern does match the item, it is included, otherwise it is excluded. To reverse that, so that items which match are excluded from the project, prefix the pattern with an exclamation point (<code>!</code>).</p>
+
+<p>The patterns are only used when creating new folder references. For existing folder references one can select the folder reference in the project drawer and use the info button (a circled letter I) in the project drawer to edit the patterns.</p>
+
+<p><em>The complexity of this system will be addressed in a future release.</em></p>
+
+<h3 id="text_and_binary_files">Text and Binary Files</h3>
+
+<p>You can either single or double click files in the project drawer. If you single click them and the file type is text, they open as a file tab in the main window.</p>
+
+<p><img src="../images/tab_bar.png" width="400" height="23" alt="Tab Bar" /></p>
+
+<p>If you double click a file, it will open using the default application. Note that folders can also be double clicked e.g. Interface Builder’s nib files will appear as folders, but can still be double clicked (and will then open in Interface Builder).</p>
+
+<p>As mentioned, only text files will open in the main window when single clicked. The way TextMate determines if a file is text is by its extension - if the extension is unknown it scans the first 8 KB of the file to see if it is valid UTF-8 (which is a superset of ASCII).</p>
+
+<p>If TextMate does not open your file and it does have an extension you can bring up the action menu for that file and pick the last item, which should read: <em>Treat Files With “.«ext»” Extension as Text</em>.</p>
+
+<h3 id="positioning_the_project_drawer">Positioning the Project Drawer</h3>
+
+<p>The project drawer will by default open on the left side of the project window. If there is no room for it to open there, it will use the right side instead. This setting is sticky so will remember which side the project drawer was last opened on.</p>
+
+<p><img src="../images/project_drawer.png" width="70" height="125" alt="Project Drawer" /></p>
+
+<p>To move it back to the left side you need to close the drawer (View → Hide Project Drawer) and then move the project window so that there is no longer room for the drawer on its right. When you then re-open the drawer, it will again appear on the left side and use that as the new default.</p>
+
+<p>The opposite can be done to force it to open on the right side.</p>
+
+<h2 id="find_and_replace_in_projects">Find and Replace in Projects</h2>
+
+<p>Using Edit → Find → Find in Project… (⇧⌘F) will bring up the window shown below.</p>
+
+<p><img src="../images/find_in_project.png" width="265" height="203" alt="Find In Project" /></p>
+
+<p>From here it is possible to search all (text) files in the current project and do replacements. After pressing Find it is possible to either press Replace All, or select which matches should be replaced, in which case the Replace All button will change to Replace Selected.</p>
+
+<p>Currently it is not possible to limit the scope of the search to anything other than all text files in the full project. As a workaround, when you want to search only a subset of your project, you can select the files you want to search in the project drawer and drag the selection to the TextMate application icon to create a new scratch project. A find/replace can then be performed on that project, which can then be closed.</p>
+
+<h2 id="moving_between_files_with_grace">Moving Between Files (With Grace)</h2>
+
+<p>When working with projects there are a few ways to move between the open files.</p>
+
+<p>The most straightforward way is by clicking on the file tab you need. This can also be done from the keyboard by pressing ⌘1-9, which will switch to file tab 1-9.</p>
+
+<p>You can also use ⌥⌘← and ⌥⌘→ to select the file tab to the left or right of the current one.</p>
+
+<p>It is possible to re-arrange the file tabs by using the mouse to drag-sort them (click and hold the mouse button on a tab and then drag it to the new location). This should make it possible to arrange them so that keyboard switching is more natural.</p>
+
+<p>One more key is ⌥⌘↑ which cycles through text files with the same base name as the current file. This is mainly useful when working with languages which have an interface file (header) and implementation file (source).</p>
+
+<p>When you want to move to a file which is not open you can use the Go to File… action in the Navigation menu (bound to ⌘T). This opens a window like the one shown below.</p>
+
+<p><img src="../images/go_to_file.png" width="247" height="284" alt="Go To File" /></p>
+
+<p>This window lists all text files in the project sorted by last use, which means pressing return will open (or go to) the last file you worked on. So using it this way makes for easy switching to the most recently used file.</p>
+
+<p>You can enter a filter string to narrow down the number of files shown. This filter string is matched against the filenames as an abbreviation and the files are sorted according to how well they match the given abbreviation. For example in the picture above the filter string is <code>otv</code> and TextMate determines that <code>OakTextView.h</code> is the best match for that (by placing it at the top).</p>
+
+<p>The file I want is <code>OakTextView.mm</code> which ranks as #2. But since I have already corrected it in the past, TextMate has learned that this is the match that should go together with the <code>otv</code> filter string, i.e. it is adaptive and learns from your usage patterns.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="preface.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Preface</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="navigation_overview.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Navigation / Overview</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

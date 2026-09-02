@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Printing — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="printing.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 17;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="templates.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Templates</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="saving_files.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Saving Files</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="printing">Printing</h1>
+
+<p>To the amusement of some and the frustration of others, TextMate currently features only limited printing capabilities.</p>
+
+<p>That means you can only use the document font with no syntax highlighting and no options except the standard printing options plus header and footer fields as shown below.</p>
+
+<p><img src="../images/printing_options.png" width="305" height="156" alt="Printing Options" /></p>
+
+<p>The header and footer fields support the <a href="environment_variables.html">normal variables</a>, interpolated code using backticks and in addition has access to these two variables:</p>
+
+<ul>
+  <li>
+    <p><code>TM_PAGE</code> — the current page being printed (this is the actual page number as if all pages in the document are printed, so even if you only print page 3, this variable will be 3 and not 1).</p>
+  </li>
+  <li>
+    <p><code>TM_PAGES</code> — total number of pages in the document.</p>
+  </li>
+</ul>
+
+<p>There are plans to improve the printing capabilities, but until then, there is also a command in the Source bundle (View Source as PDF) which produces a PDF from the current source using <a href="http://www.codento.com/people/mtr/genscript/"><code>enscript</code></a> and has syntax highlighting enabled for supported languages.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="templates.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Templates</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="saving_files.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Saving Files</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

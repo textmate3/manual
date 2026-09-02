@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Appendix — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="appendix.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 23;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="getting_help.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Getting Help</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="appendix">Appendix</h1>
+
+<h2 id="property_list_format">Property List Format</h2>
+
+<p>Normally TextMate presents settings and such using a GUI, but for the <a href="language_grammars.html">language grammars</a> and <a href="preferences_items.html">preferences items</a> it exposes you to the <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/PropertyLists/Articles/OldStylePListsConcept.html">old-style property list format</a>.</p>
+
+<p>For the purposes of TextMate this format has 3 data types which are described below. Notice that the escape rules for strings have been changed slightly compared to Apple’s official format. This was done to make the language grammars more readable, since these need a lot of literal escape characters.</p>
+
+<h3 id="strings">Strings</h3>
+
+<p>The basic type is a string which can be either single or double quoted.</p>
+
+<p>When the string is single quoted, all characters are verbatim. If you need to put a <code>'</code> inside a single quoted string, you need to use two, for example:</p>
+
+<pre><code>'Normal string'          =&gt; Normal string
+'That''s an apostrophe'  =&gt; That's an apostrophe
+'String with \backslash' =&gt; String with \backslash
+</code></pre>
+
+<p>As you can see, the only interpretation which happens is to convert any occurrence of <code>''</code> to a single <code>'</code>.</p>
+
+<p>Double quoted strings do support escape sequences, apart from <code>\"</code> and <code>\\</code>. For example:</p>
+
+<pre><code>"Normal string"          =&gt; Normal string
+"Some \"quoted\" text"   =&gt; Some "quoted" text
+"Literal \escape"        =&gt; Literal \escape
+"Escaped \\escape"       =&gt; Escaped \escape
+"Two \\\escapes"         =&gt; Two \\escapes
+</code></pre>
+
+<p>When a string consists entirely of letters, underscores and dashes, it is possible to omit the quotes. For example the following are all legal strings:</p>
+
+<pre><code>foreground-color
+this_is_a_string
+justLettersInThisOne
+</code></pre>
+
+<h3 id="arrays">Arrays</h3>
+
+<p>Arrays are collections of elements, each element can be another array, a string or a dictionary. Elements are comma separated and the entire list is enclosed in parentheses. Some examples:</p>
+
+<pre><code>( "foo", "bar", "fud" )
+( "nested", ( "array", "in" ), "array" )
+</code></pre>
+
+<p>It is allowable to put a comma after the last element, like this:</p>
+
+<pre><code>( "foo", "bar", "fud", )
+</code></pre>
+
+<h3 id="dictionaries">Dictionaries</h3>
+
+<p>Dictionaries associate a value with a name (key). They are also known as maps, hashes, associative arrays and probably go under a few other terms as well.</p>
+
+<p>The structure is: <code>{ «key» = «value»; }</code> here <code>«key»</code> is a string and <code>«value»</code> can be either an array, string or another dictionary. Some examples:</p>
+
+<pre><code>{ color = "black"; }
+{ colors = ( "red", "green", "blue" ); }
+</code></pre>
+
+<h2 id="indentation_rules">Indentation Rules</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Source code and structured text generally have indentation conventions. TextMate can help you with these if you tell it when to increase and decrease the indent.</p>
+
+<p>Having TextMate figure out the proper indentation is useful when you paste text in another part of the source (where the indentation is different), when you press return on a line that affects the indentation (for next line), or when you press tab at the beginning of the line (and want as much indentation as appropriate for that line).</p>
+
+<h3 id="the_system">The System</h3>
+
+<p>Some languages go a little beyond a single character/keyword to increase and another to decrease, so TextMate has four (regexp) patterns you can set to tell it about your indentation conventions.</p>
+
+<p>The patterns should be set in the Bundle Editor and are set as <a href="preferences_items.html">preference items</a> with the scope set to the scope for which you want the rules to apply (e.g. <code>source.c++</code>).</p>
+
+<p><img src="../images/indentation_rules.png" width="442" height="280" alt="Indentation Rules" /></p>
+
+<p>We will use the following code example to explain the four patterns:</p>
+
+<pre><code> 1  int main (int argc, char const* argv[])
+ 2  {
+ 3     while(true)
+ 4     {
+ 5        if(something())
+ 6           break;
+ 7  #if 0
+ 8        play_awful_music();
+ 9  #else
+10        play_nice_music();
+11  #endif
+12     }
+13     return 0;
+14  }
+</code></pre>
+
+<h3 id="increase_pattern">Increase Pattern</h3>
+
+<p>The <code>increaseIndentPattern</code> should match the lines which increase the indent. In our example above, this is the <code>{</code> characters at lines 2 and 4 (the if on line 5 will be discussed later).</p>
+
+<p>The simple preference for this pattern would be:</p>
+
+<pre><code>increaseIndentPattern = '\{';
+</code></pre>
+
+<p>However, since we could have code like this:</p>
+
+<pre><code>int arr[] = { 1, 2, 3 };
+</code></pre>
+
+<p>or</p>
+
+<pre><code>str = "foo {";
+</code></pre>
+
+<p>we need to make it a little more complicated, by ensuring that no }, <code>"</code> or <code>'</code> will follow the <code>{</code> on the same line. A good choice for languages which use the bracket to start a block would be:</p>
+
+<pre><code>increaseIndentPattern = "^.*\{[^}\"']*$";
+</code></pre>
+
+<h3 id="decrease_pattern">Decrease Pattern</h3>
+
+<p>The <code>decreaseIndentPattern</code> should match the counterpart of our increase indent pattern. In our example the indent is increased by lines 12 and 14. The character here is } and so the simple decrease indent pattern would be setup as:</p>
+
+<pre><code>decreaseIndentPattern = '\}';
+</code></pre>
+
+<p>the more complex version may allow only comment end markers in front of the <code>}</code> and whitespace or <code>;</code> after the <code>}</code>, so with that in mind, we extend the pattern to:</p>
+
+<pre><code>decreaseIndentPattern = '^(.*\*/)?\s*\}[;\s]*$';
+</code></pre>
+
+<h3 id="increase_only_next_line">Increase Only Next Line</h3>
+
+<p>We ignored line 5 in the increase indent pattern, that is because it does not really increase the indent, it only causes the next line to be indented if a block is not started.</p>
+
+<p>For this situation there is the <code>indentNextLinePattern</code>, which should match these lines. We could make it something like:</p>
+
+<pre><code>indentNextLinePattern = 'if|while|for|switch|…';
+</code></pre>
+
+<p>But generally in C-like languages, all lines not terminated with a semi-colon (or ending with starting a block), cause the next line to be indented. This is (with most conventions) also the case when manually breaking one expression into several lines, e.g.:</p>
+
+<pre><code>some_function(argument1,
+   argument2,
+   argument3);
+
+more_code;
+</code></pre>
+
+<p>So instead of explicitly matching known language constructs which have the next line indented, we simply match all lines which are not terminated with a semi-colon or brackets. One thing to remember is single-line comments like this:</p>
+
+<pre><code>some_function(arg); // this is terminated
+</code></pre>
+
+<p>To solve that, we start with a negative look-ahead assertion in this case and then go on to match lines not terminated by any of the characters mentioned above. The pattern ends up as:</p>
+
+<pre><code>indentNextLinePattern = '^(?!.*;\s*//).*[^\s;{}]\s*$';
+</code></pre>
+
+<h3 id="ignoring_lines">Ignoring Lines</h3>
+
+<p>Sometimes we have lines which are outside the normal indent, or does not affect the indent despite matching our rather general <code>indentNextLinePattern</code>. In our example these are the preprocessor lines (line 7, 9 and, 11).</p>
+
+<p>To tell TextMate about these lines, there is an <code>unIndentedLinePattern</code> rule. Another case to avoid might be something like this:</p>
+
+<pre><code> 1     some_function();
+ 2  
+ 3  /* ignore_first();
+ 4     ignore_second();
+ 5  */
+ 6     more_functions();
+</code></pre>
+
+<p>Here line 3 and 5 would count as having zero indent, so we want to ignore these.</p>
+
+<p>To instruct it to ignore preprocessor lines, lines with leading comments or a few Objective-C directives (which are not terminated by a semi-colon), we can use this pattern:</p>
+
+<pre><code>unIndentedLinePattern =
+   '^\s*((/\*|\*/\s*$|//|#|@interface|@implementation|@end).*)?$';
+</code></pre>
+
+<h2 id="plug-in_api">Plug-in API</h2>
+
+<p>When launched, TextMate loads plug-ins located in <code>~/‍Library/‍Application Support/‍TextMate/‍PlugIns</code>. The plug-in should be a normal Objective-C bundle with a principal class which will receive an <code>initWithPlugInController:</code> when instantiated.</p>
+
+<p>There is a <a href="http://svn.textmate.org/trunk/Tools/Clock%20Example%20PlugIn/">sample plug-in here</a>. Though other than the startup message, TextMate does not offer any API for the plug-in to use (but will likely do so in the future).</p>
+
+<p>If you are interested in developing plug-ins for TextMate, you can subscribe to the <a href="https://lists.macromates.com/textmate-plugins/">plug-ins mailing list</a>.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="getting_help.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Getting Help</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

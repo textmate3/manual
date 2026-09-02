@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Templates — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="templates.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 16;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="key_bindings.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Key Bindings</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="printing.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Printing</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="templates">Templates</h1>
+
+<p>A template consists of a (shell) command which generates a new file based on the template’s contents. Below is shown how an <code>index.html</code> file is part of the XHTML 1.1 template.</p>
+
+<p><img src="../images/xhtml_templates.png" width="135" height="67" alt="Xhtml Templates" /></p>
+
+<p>When executing the template shell command, the working directory is set to the directory containing the template files so that these can be referenced by name only (i.e. without path) and the shell command has access to the following three environment variables (in addition to the <a href="environment_variables.html">normal variables</a>):</p>
+
+<ul>
+  <li>
+    <p><code>TM_NEW_FILE</code> — the full path, including the name of the file to be generated (i.e. the one the user entered in the GUI).</p>
+  </li>
+  <li>
+    <p><code>TM_NEW_FILE_BASENAME</code> — the base name of the file to be generated. If <code>TM_NEW_FILE</code> is <code>/tmp/foo.txt</code> then this variable would be <code>foo</code> without the folder name and the file extension.</p>
+  </li>
+  <li>
+    <p><code>TM_NEW_FILE_DIRECTORY</code> — the folder name of the file to be generated.</p>
+  </li>
+</ul>
+
+<p>A template can then be instantiated either by using the menus (File → New From Template) or for projects by using the New File button in the project drawer (⇧⌘N).</p>
+
+<p><img src="../images/new_file_from_template.png" width="239" height="106" alt="New File From Template" /></p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="key_bindings.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Key Bindings</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="printing.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Printing</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

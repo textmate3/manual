@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Scope Selectors — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="scope_selectors.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 12;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="language_grammars.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Language Grammars</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="themes.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Themes</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="scope_selectors">Scope Selectors</h1>
+
+<p>A <em>scope selector</em> is a pattern much like a CSS selector which is matched against the scope of the caret (i.e. current context) and the outcome is either a match or a non-match (see also: ranking matches further down).</p>
+
+<p><img src="../images/scope_selector.png" width="307" height="56" alt="Scope Selector" /></p>
+
+<p>This allows the <a href="bundles.html#activation-of-bundle-items">activation method</a> of a bundle item to be limited to contexts like “inside a comment” or “in an HTML document”. The advantage of this is that it allows a tab trigger like <code>for</code> to be re-used in different languages and works smoothly for mixed documents like HTML which can have embedded CSS, PHP, Ruby and JavaScript.</p>
+
+<p>Scope selectors are also used with <a href="preferences_items.html">preference items</a> and <a href="themes.html">themes</a>. In the latter case they are used to style elements of a document and in the former case to adjust various aspects of editing etc. on a granular basis.</p>
+
+<h2 id="element_names">Element Names</h2>
+
+<p>Generally a document consists of many different elements. A prose document may contain headings, paragraphs, bullet lists, emphasized text where source code will often contain strings, comments, keywords, storage types etc.</p>
+
+<p>In TextMate the <a href="language_grammars.html">language grammars</a> will match these elements and assign a name to each. This name should be dot separated with each additional part specializing the kind of element matched. For example a double-quoted string in C will get <code>string.quoted.double.c</code> assigned as its scope name (see <a href="language_grammars.html#naming-conventions">naming conventions</a> for more info).</p>
+
+<p>A scope selector in its simplest form is an element name to match, but it only needs to specify a prefix of the actual element name. So if we specify <code>string</code> as our scope selector it will also match all quoted strings. Likewise if we specify <code>string.quoted</code> it will match single, double and triple quoted strings.</p>
+
+<p>An empty scope selector will match all scopes but with the lowest possible rank (see <a href="scope_selectors.html#ranking-matches">ranking matches</a> later).</p>
+
+<h2 id="descendant_selectors">Descendant Selectors</h2>
+
+<p>As with CSS, it is possible to use the context of an element in the scope selector. The picture below shows the scope for the string as a tool tip (via ⌃⇧P). The direct parent of the string is <code>source.php.embedded.html</code> and  <code>text.html.basic</code> is an ancestor.</p>
+
+<p><img src="../images/show_scope.png" width="296" height="110" alt="Show Scope" /></p>
+
+<p>In the scope selector we specify element names as a space separated list to indicate that each element should be present in the scope (and in the same order). So if we want to target all strings in PHP, we can use <code>source.php string</code>, or we can use <code>text.html source.php</code> to target PHP embedded in HTML.</p>
+
+<h2 id="excluding_elements">Excluding Elements</h2>
+
+<p>There are situations where we want to match a subset of a document but exclude particular subsets of this subset.</p>
+
+<p>For example in Ruby it is possible to embed code in strings using <code>#{…}</code>, so a nice snippet would be to insert that when pressing <code>#</code> inside of a string. The scope selector for that would be: <code>source.ruby string</code>.</p>
+
+<p>This unfortunately means that even inside code (embedded in strings) <code>#</code> will insert <code>#{…}</code>. To avoid this, we can subtract scope selectors to get the (asymmetric) difference using the minus operator. So a better scope selector for our snippet would be <code>source.ruby string - string source</code>.</p>
+
+<p>Below is an illustration of what that scope selector would target.</p>
+
+<pre><code>puts "Today is #{Date.today}."
+     ^^^^^^^^^^             ^^
+</code></pre>
+
+<h2 id="grouping">Grouping</h2>
+
+<p>When we want something to match several distinct scopes, we can group scope selectors with the comma operator. For example to match both strings and comments the scope selector would be: <code>string, comment</code>.</p>
+
+<h2 id="ranking_matches">Ranking Matches</h2>
+
+<p>If more than one scope selector matches the current scope then they are ranked according to how “good” a match they each are.</p>
+
+<p>The winner is the scope selector which (in order of precedence):</p>
+
+<ol>
+  <li>
+    <p>Match the element deepest down in the scope e.g. <code>string</code> wins over <code>source.php</code> when the scope is <code>source.php string.quoted</code>.</p>
+  </li>
+  <li>
+    <p>Match most of the deepest element e.g. <code>string.quoted</code> wins over <code>string</code>.</p>
+  </li>
+  <li>
+    <p>Rules 1 and 2 applied again to the scope selector when removing the deepest element (in the case of a tie), e.g. <code>text source string</code> wins over <code>source string</code>.</p>
+  </li>
+</ol>
+
+<p>In the case of tab triggers, key equivalents and dropped files (<a href="drag_commands.html">drag commands</a>), a menu is presented for the best matches when these are identical in rank (which would mean the scope selector in that case was identical).</p>
+
+<p>For themes and preference items, the winner is undefined when multiple items use the same scope selector, though this is on a per-property basis. So for example if one theme item sets the background to blue for <code>string.quoted</code> and another theme item sets the foreground to white, again for <code>string.quoted</code>, the result would be that the foreground was taken from the latter item and background from the former.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="language_grammars.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Language Grammars</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="themes.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Themes</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

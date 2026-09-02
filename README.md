@@ -13,6 +13,6 @@ Each future release adds its own directory by copying the previous version's for
 
 The 2.0 content still lives at the repository root (`pages/`, `bin/`, `Makefile`) and moves into `2.0/` only after the stranded prose is recovered. `deployed-html-2016/` holds the manual as last deployed, compiled HTML containing prose that was edited after the markdown sources were last touched. It is the reference the recovery works from and rebuilds are checked against, so nothing regenerates or writes into it. Running `make` before that recovery would overwrite the markdown with older content, so the recovery comes first.
 
-`1/` is empty until the TextMate 1.x manual is extracted into it: 26 pages plus images, preserved from macromates.com as compiled HTML that never had a markdown source.
+`1/` holds the TextMate 1.x manual as archived from macromates.com: compiled HTML pages and their images, preserved exactly as served. The pages never had a markdown source, and their stylesheet links point at the original site, so they read best as content rather than render faithfully offline. Extracting them into a source format is future work.
 
 Shared tooling stays at the repository root and serves every version directory.

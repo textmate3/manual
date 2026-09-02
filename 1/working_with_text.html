@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Working With Text — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="working_with_text.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 3;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="navigation_overview.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Navigation / Overview</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="bundles.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Bundles</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="working_with_text">Working With Text</h1>
+
+<p>TextMate tries for the most part to mimic the behavior of the <code>NSTextView</code> system component, as used by applications such as Mail, Safari and basically all other Cocoa applications.</p>
+
+<p>Some of the extra features related to text editing are covered in this section.</p>
+
+<h2 id="auto-paired_characters_quotes_etc">Auto-Paired Characters (Quotes etc.)</h2>
+
+<p>When writing structured text (like markup or source code) there are characters which go together in pairs. For example in a programming language you rarely type an opening brace (<code>{</code>) without also needing the closing brace (<code>}</code>).</p>
+
+<p>To help you keep these characters balanced, TextMate will insert the appropriate closing character after the caret when you type the opening one. If you type the closing character TextMate is smart enough to overwrite the auto-inserted one. If you type an opening character and then delete it using backward delete (⌫) then the auto-inserted character will also be deleted. If you only want to delete the auto-inserted character, use forward delete instead (⌦).</p>
+
+<p>It is also possible to wrap a selection in an open/close character by selecting text and typing the opening character. For example if you type <code>foo</code>, select it and type <code>(</code> then TextMate will make it <code>(foo)</code> placing the caret after the ending parentheses.</p>
+
+<p>The actual character pairs are defined in the <a href="preferences_items.html#paired-characters">bundle preferences</a> with different settings for different languages and contexts. For example, in source code an apostrophe is set up to have itself as a closing character, except for comments and strings. This is achieved using <a href="scope_selectors.html">scope selectors</a>.</p>
+
+<p>Two useful shortcuts in relation to auto-paired characters (defined as macros in the <a href="bundles.html#source">Source bundle</a> and overridden for a few languages) are:</p>
+
+<ol>
+  <li>
+    <p>⌘↩  <br />
+Move to the end of the line and insert a newline.  <br />
+For example if you write:</p>
+
+    <pre><code>print("foo
+</code></pre>
+
+    <p>Then you will have <code>")</code> to the right of the caret and can now use ⌘↩ to skip these two characters and insert a new line.</p>
+  </li>
+  <li>
+    <p>⇧⌘↩  <br />
+Move to the end of the line, insert a <code>;</code> and then insert a newline.</p>
+  </li>
+</ol>
+
+<h2 id="completion">Completion</h2>
+
+<p>TextMate has a simple yet effective completion function on ⎋ (escape). It will complete the current word based on matches in the current document. If there are multiple matches, you can cycle through these by pressing ⎋ continuously. It is also possible to cycle backwards using ⇧⎋.</p>
+
+<p>The matches are sorted by distance from the caret, meaning candidates which are closer to the caret will be suggested before candidates farther away.</p>
+
+<p>Two possibilities exist for augmenting this default completion. Both are done via <a href="preferences_items.html#completions">bundle preferences</a>.</p>
+
+<p>The first option is to provide a list of candidates which should always be suggested. For example the Objective-C bundle has a list of commonly used Cocoa framework methods. This is an array of the candidates, e.g.:</p>
+
+<pre><code>completions = ( 'retain', 'release', 'autorelease', 'description' );
+</code></pre>
+
+<p>The other option is to set a custom shell command to gather the completions. The shell command will have the <code>TM_CURRENT_WORD</code> <a href="environment_variables.html">environment variable</a> available (as the word which needs to be completed) along with the other variables.</p>
+
+<p>For example the C bundle has a custom completion command setup for when the caret is inside the preprocessor include directive, it looks like this:</p>
+
+<pre><code>completionCommand = 'find "$TM_DIRECTORY" \
+    -name "$TM_CURRENT_WORD*.h" -maxdepth 2 \
+    -exec basename "{}" \;|sort';
+</code></pre>
+
+<p>This will find as matches, any file in the current directory (and direct sub-directories) which have the current word as prefix and an <code>.h</code> extension.</p>
+
+<p>When you provide your own completion command (or list) you may want to disable the default matches. This can be done by setting <code>disableDefaultCompletion</code> to <code>1</code>.</p>
+
+<h2 id="copy_and_paste">Copy and Paste</h2>
+
+<h3 id="clipboard_history">Clipboard History</h3>
+
+<p>Each time you copy or cut text, the text is pushed onto a stack.</p>
+
+<p>By pressing ⌃⌥⌘V you will see the list of all previous clippings and can pick the one you want to paste using arrow keys. Use return to insert it and escape to dismiss the list. If you dismiss the list, the currently selected clipping will be what gets pasted the next time you use the paste function.</p>
+
+<p><img src="../images/clipboard_history.png" width="144" height="89" alt="Clipboard History" /></p>
+
+<p>Instead of having to pick the clip from the list, you can use ⇧⌘V to paste the previous clip in the list. Using that key again will advance to the clip before that and so on. To go back you can use ⌥⌘V. These key equivalents are useful when you want to make multiple copies from one document and then paste these LIFO-style (Last In First Out) into another document (or another location in the same document).</p>
+
+<h3 id="re-indented_paste">Re-indented Paste</h3>
+
+<p>When pasting text, TextMate will estimate the indent of the text pasted as well as the current indent level and adjust the pasted text so that it matches the current indent.</p>
+
+<p>The estimates are done using the indentation rules mentioned in the <a href="working_with_text.html#re-indent-text">Re-Indent Text</a> section.</p>
+
+<p>If you temporarily want to avoid this you can paste text using ⌃⌘V. You can also permanently disable re-indented pasting in the Text Editing part of the Preferences.</p>
+
+<h2 id="editing_modes">Editing Modes</h2>
+
+<h3 id="freehanded_editing">Freehanded Editing</h3>
+
+<p>You can enable or disable freehanded editing in the Edit → Mode submenu (⌥⌘E).</p>
+
+<p>With this mode enabled caret movement will not be restricted by line endings or tab stops.</p>
+
+<p>This is useful when working with ASCII diagrams, when inserting something at a given column on several lines (and you do not want to insert the padding) and in a few other situations.</p>
+
+<p>When making <a href="working_with_text.html#column-selections">column selections</a> freehanded mode is (temporarily) enabled, allowing you to make selections past the end of lines.</p>
+
+<p>It is also possible to place the caret beyond the end of a line by single-clicking the mouse while holding down the option key (⌥).</p>
+
+<h3 id="overwrite_mode">Overwrite Mode</h3>
+
+<p>By enabling overwrite mode in the Edit → Mode submenu (⌥⌘O) characters already in the document will be overwritten as you type rather than inserted as normal.</p>
+
+<p>This is useful when working with column data, e.g.:</p>
+
+<pre><code>foo     jaz
+bar     sub
+fud     dub
+</code></pre>
+
+<p>Imagine we want to overwrite some of the values in the first column. Somewhat similarly, we may have a line of a fixed width and want to replace part of it but preserve the width, for example we could have code like this where we must right-align the value to column 20 but want to overwrite the label:</p>
+
+<pre><code>printf("Value is         %3d", 37).
+</code></pre>
+
+<h2 id="find_and_replace">Find and Replace</h2>
+
+<p>In addition to the standard find dialog, TextMate has a Find submenu (located in the Edit menu) which gives you key equivalents for find and replace actions.</p>
+
+<p><img src="../images/find_menu.png" width="174" height="162" alt="Find Menu" /></p>
+
+<h3 id="inserting_newlines_and_tabs_in_the_find_dialog">Inserting Newlines and Tabs in the Find Dialog</h3>
+
+<p>The find dialog uses normal system controls for accepting input. You can toggle between single line and multi line text controls using the arrow next to the Replace text field.</p>
+
+<p><img src="../images/multi_line_find_dialog.png" width="451" height="270" alt="Multi Line Find Dialog" /></p>
+
+<p>If you need to insert a newline or tab character into either of the text fields, you can hold down option (⌥) while pressing the tab (⇥) or return (↩) key. This will insert a literal tab or newline character.</p>
+
+<h3 id="find_clipboard">Find Clipboard</h3>
+
+<p>Two useful key equivalents are ⌘E and ⌘G. The first copies the selection to the shared find clipboard. This works in the majority of applications and allows you to find the next occurrence of that string by then pressing ⌘G.</p>
+
+<p>The find clipboard works across applications so whether in Safari, TextEdit, Mail, TextMate, Terminal, Console, or similar, one can copy the selected text to the find clipboard, switch application and use ⌘G to find that string.</p>
+
+<p>In addition TextMate offers ⇧⌘E to copy the selection to the replace clipboard. This is often useful to save a trip to the find dialog, for example if you want to replace newlines with the pipe character (<code>|</code>) for a list of items, select a newline, press ⌘E to use that as the find string. Now type a <code>|</code>, select it and press ⇧⌘E so that it is copied to the replace clipboard.</p>
+
+<p>The next step is then to either press ⌃⌘F to perform the replacement in the entire document, or select the range in which you want the replacement to occur and use ⌃⇧⌘F instead.</p>
+
+<h2 id="moving_text">Moving Text</h2>
+
+<h3 id="increase_decrease_indent_level">Increase/Decrease Indent Level</h3>
+
+<p>In the Text menu there is a Shift Left and Shift Right action bound to ⌘[ and ⌘]. These will increase and decrease the indent by the size of one tab.</p>
+
+<p>On many european key layouts these keys are rather awkward, so in addition to these, you can also use ⌥⇥ and ⌥⇤ (where ⇤ is achieved using ⇧⇥).</p>
+
+<h3 id="move_text_up_down_left_right">Move Text Up/Down/Left/Right</h3>
+
+<p>If you want to move a line/block up/down a few lines or move a word/column selection, it can be done by holding down ⌃⌘ and using the arrow keys to move the selection around. It also works for moving lines up/down without a selection.</p>
+
+<h3 id="re-indent_text">Re-indent Text</h3>
+
+<p>If you have code which has broken indent, you can select it and use Text → Indent Selection (without a selection it indents the current line).</p>
+
+<p>The rules for estimating the indent are setup per-language using <a href="preferences_items.html">bundle preferences</a>. For more details see the <a href="appendix.html#indentation-rules">indentation rules section</a>.</p>
+
+<h2 id="selecting_text">Selecting Text</h2>
+
+<p>Selecting text is achieved by holding down ⇧ while using the normal movement keys. In addition the Edit → Select submenu has actions to select current word, line, paragraph, enclosing brackets and entire document.</p>
+
+<h3 id="editing_multiple_lines">Editing Multiple Lines</h3>
+
+<p>Sometimes there is a need for adding a suffix to lines of variable length, or maybe editing the last part of these lines.</p>
+
+<p>Although you can use find and replace for this, an easier way is to select the lines that needs to be edited, then use Text → Edit Each Line in Selection (⌥⌘A) and the caret will be placed at the end of the first line in the selection.</p>
+
+<p>You can now type new text, delete text or go back and edit existing text and this will be mirrored down through all the (previously selected) lines. To leave this mode, simply move the caret away from the current line.</p>
+
+<h3 id="column_selections">Column Selections</h3>
+
+<p>It is possible to select column data either by holding down ⌥ and making the selection with the mouse, or making a regular selection and then pressing ⌥ once (which toggles between the two types of selection).</p>
+
+<p>You can use all the normal actions on a column selection e.g. move selection, replace in selection, transpose (lines),  actions from the Text menu, filter the selection through a shell command, etc.</p>
+
+<h2 id="column_movement_typing">Column Movement / Typing</h2>
+
+<p>Using arrow up/down with ⌥ will move the caret to the first/last row in the current column. Hold down ⇧ to get it selected.</p>
+
+<p><img src="../images/column_data.png" width="86" height="53" alt="Column Data" /></p>
+
+<p>For example if you have column data as shown above with the caret in front of <code>foo</code>, press ⌥⇧↓ and it will move the caret down in front of <code>fud</code> and leave the text between <code>foo</code> and <code>fud</code> selected.</p>
+
+<p><img src="../images/column_movement.png" width="86" height="53" alt="Column Movement" /></p>
+
+<p>You may now either want to press ⌥ once to switch to a zero-width column selection, then start typing to type on each line.</p>
+
+<p><img src="../images/column_typing.png" width="86" height="53" alt="Column Typing" /></p>
+
+<p>Alternatively use ⌥⇧→ and then ⌥ to leave the entire column selected (in column mode).</p>
+
+<p><img src="../images/column_selection.png" width="86" height="53" alt="Column Selection" /></p>
+
+<h2 id="smart_tab_behavior">Smart Tab Behavior</h2>
+
+<p>When using the tab key at the beginning of a line, TextMate will insert as many tabs as it estimates to be correct for that line. If the line already has text the caret will move to the front of this text.</p>
+
+<p>If the line already has the correct indent (or above) a single tab will be inserted.</p>
+
+<h2 id="spell_checking">Spell Checking</h2>
+
+<p>TextMate supports the system wide ‘Check Spelling as You Type’. This can be changed in the Edit → Spelling submenu.</p>
+
+<p>You can bring up the context sensitive menu for a misspelled word to get spelling suggestions.</p>
+
+<p>Since TextMate is intended for structured text it is possible to exclude parts of the document from being checked. This is done by creating a <a href="preferences_items.html">preferences item</a> in the bundle editor, setting <code>spellChecking</code> to <code>0</code> and filling in the <a href="scope_selectors.html">scope selector</a> with the selector to target for no spell checking.</p>
+
+<p>By default spell checking is disabled for source code except strings and comments and also for keywords, tags and similar in HTML, LaTeX, Markdown, etc.</p>
+
+<h2 id="using_spaces_instead_of_tabs">Using Spaces Instead of Tabs</h2>
+
+<p>TextMate can use spaces instead of tab characters. This is done by clicking the “Tab Size” pop-up in the status bar and enabling Soft Tabs.</p>
+
+<p>This setting will only affect the current language and all languages with a common root that do not have the option set yet. The same applies to the state of spell checking, soft wrap and the actual tab size.</p>
+
+<p><img src="../images/tab_size_settings.png" width="99" height="94" alt="Tab Size Settings" /></p>
+
+<p>When soft tabs are enabled, TextMate will for the most part act exactly as if you were using hard tabs but the document does indeed contain spaces.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="navigation_overview.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Navigation / Overview</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="bundles.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Bundles</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

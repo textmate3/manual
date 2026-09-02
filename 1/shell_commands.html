@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32" href="../../textmate/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-11d3994106039e25b079a4adada40bcc.css">
+  <title>Shell Commands — TextMate 1.x Manual</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="../../index.html">TextMate <span class="d-sm-none d-md-inline">for macOS</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="shell_commands.html#" role="button" aria-haspopup="true" aria-expanded="false">TextMate</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../../index.html">Home</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../../textmate/manual/index.html">Documentation (2.0)</a>
+              <a class="dropdown-item" href="index.html">Documentation (1.x)</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../blog/index.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sigpipe.macromates.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../support.html">Support</a>
+          </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<main>
+
+
+<style type="text/css">
+  :root {
+    --chapter-index: 7;
+  }
+</style>
+
+<div class="bg-alternative border-bottom mb-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="snippets.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Snippets</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="environment_variables.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Environment Variables</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-primary" role="alert">
+        This manual covers TextMate 1.5.1 — Go to <a href="../../textmate/manual/index.html">TextMate 2 manual</a>
+      </div>
+
+      <div class="enumerate-headers">
+        <h1 id="shell_commands">Shell Commands</h1>
+
+<p>The shell is a scripting language used to piece together various programs (shell commands), and often in an interactive way, e.g. as done when launching Terminal and entering commands to execute.</p>
+
+<p>For a thorough introduction to the shell scripting language have a look at this <a href="http://developer.apple.com/documentation/OpenSource/Conceptual/ShellScripting/index.html">shell tutorial provided by Apple</a>.</p>
+
+<h2 id="executing_commands_filtering_text">Executing Commands / Filtering Text</h2>
+
+<p>TextMate allows shell commands to be executed in different contexts. Some of the more useful options are:</p>
+
+<ol>
+  <li>
+    <p>In the current document, either press ⌃R with no selection to run the current line as a shell command, or select one or more lines and use ⌃R to run the selection as a shell script (it supports shebang as well).</p>
+
+    <p><img src="../images/execute_line.png" width="264" height="54" alt="Execute Line" /></p>
+  </li>
+  <li>
+    <p>From the Text menu you can select Filter Through Command… (⌥⌘R) which opens a panel where you can enter a shell command to run and set what should be given as input (stdin) plus what to do with the output of the command (often you want to set input to the selected text and let the output replace the selection).</p>
+
+    <p><img src="../images/filter_through_command.png" width="212" height="182" alt="Filter Through Command" /></p>
+  </li>
+  <li>
+    <p><a href="commands.html">Commands</a> via the Bundle Editor. The first two options are mostly for one-shot commands, whereas commands created in the Bundle Editor are for stuff you want to run again later. The options here are the same as those of option 2, i.e. you can set what to do with input/output, even have the output shown as a tool tip (e.g. for commands which lookup help for the current word) or HTML (e.g. for commands which build the project and show results, incrementally). You can also set that documents should be saved before executing the command and give the command a key equivalent or tab trigger.</p>
+
+    <p><img src="../images/command_editor.png" width="416" height="269" alt="Command Editor" /></p>
+  </li>
+</ol>
+
+<h2 id="search_path">Search Path</h2>
+
+<p>When running a command from Terminal, the shell will use the value of the <code>PATH</code> variable to locate it (when it is specified without an absolute location). For example <code>ruby</code> is located in <code>/usr/bin/ruby</code> and <code>svn</code> is (for me) located in <code>/opt/local/bin/svn</code>.</p>
+
+<p>TextMate <a href="http://developer.apple.com/qa/qa2001/qa1255.html">inherits the value of <code>PATH</code> from Finder</a>, which has only a few search locations specified, so for many users, it is necessary to augment this PATH if they need TextMate to find <code>git</code>, <code>pdflatex</code>, or similar commands not included with Mac OS X.</p>
+
+<p>There are two ways to setup <code>PATH</code> for TextMate. Either via Preferences → Advanced → Shell Variables or by editing <a href="http://developer.apple.com/documentation/MacOSX/Conceptual/BPRuntimeConfig/Articles/EnvironmentVars.html#//apple_ref/doc/uid/20002093-113982"><code>~/.MacOSX/environment.plist</code></a>.</p>
+
+<p>The former is by far the simplest, the latter is a property list with <a href="http://developer.apple.com/qa/qa2001/qa1067.html">environment variables read by Finder when you login</a>, so values set here should affect all applications.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-alternative border-bottom border-top my-4">
+
+<div class="container py-2">
+  <div class="row">
+    <div class="col">
+      <a href="snippets.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-prev"/></svg>
+        <span class="d-none d-sm-inline">Snippets</span>
+      </a>
+    </div>
+
+    <div class="col text-center">
+      <a href="index.html" class="no-text-decoration">
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-list"/></svg>
+        <span class="d-none d-md-inline">Table of Contents</span>
+      </a>
+    </div>
+
+    <div class="col text-right">
+      <a href="environment_variables.html" class="no-text-decoration">
+        <span class="d-none d-sm-inline">Environment Variables</span>
+        <svg role="img" class="svg-icon-sm"><use xlink:href="https://macromates.com/textmate/img/icons.svg#icon-next"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <p class="text-center">Copyright © 2024 MacroMates Ltd.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
