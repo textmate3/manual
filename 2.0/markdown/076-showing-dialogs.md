@@ -1,5 +1,5 @@
-# Showing Dialogs
+# Showing Dialogs {#showing-dialogs}
 
-## Dialog
+## Dialog {#dialog}
 
-## Commit Window
+## Commit Window {#commit-window}

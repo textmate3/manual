@@ -1,4 +1,4 @@
-# Language Grammars
+# Language Grammars {#language-grammars}
 
 * Begin/while rules
 * Including from other grammar repositories
@@ -6,9 +6,9 @@
 * The meaning of `\G`
 * Rules on captures
 
-## Injected Grammars
+## Injected Grammars {#injected-grammars}
 
 * TODO, RFC, URLs
-* How to open URLs (⌅ or fn-return)
+* How to open URLs (`⌅` or fn-return)
 
-## File Type Detection
+## File Type Detection {#file-type-detection}
