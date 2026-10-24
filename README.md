@@ -6,6 +6,7 @@ The manual for every version of TextMate, one directory per documented version, 
 | --------- | -------------- | ------------------------------------------------------------- |
 | `1/`      | TextMate 1.x   | Preservation. Extracted from the archived macromates.com HTML |
 | `2.0/`    | TextMate 2.0.x | Preservation. The manual as the 2.0 era left it               |
+| `2.1/`    | TextMate 2.1   | In progress. What is new or different in 2.1, written from the release notes, with the 2.0 manual still describing the rest |
 
 Each future release adds its own directory by copying the previous version's forward and editing it. Published paths mirror the directories: `/manual/1.0/`, `/manual/2.0/`, and an unversioned `/manual/` that redirects to the newest stable version so old links never rot.
 
