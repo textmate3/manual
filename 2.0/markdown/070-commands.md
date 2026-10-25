@@ -1,7 +1,7 @@
 # Commands {#commands}
 
-* Commands with non-zero exit code treated as error
-* Current working directory
+- Commands with non-zero exit code treated as error
+- Current working directory
 
 ## Search Path {#search-path}
 
@@ -18,11 +18,11 @@ requiredCommands = (
 
 ## Drag Commands {#drag-commands}
 
-* Dropping multiple files
+- Dropping multiple files
 
 ## Writing Commands {#writing-commands}
 
-* Use `TM_«tool»` and use it without quotes if there is a chance the tool might be multiple tools.
+- Use `TM_«tool»` and use it without quotes if there is a chance the tool might be multiple tools.
 
 ### Executor Commands {#executor-commands}
 
