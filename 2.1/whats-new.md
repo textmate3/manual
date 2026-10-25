@@ -1,42 +1,57 @@
 # What is new in 2.1
 
-The headline is that TextMate 2.1 is TextMate 2.0 carried forward by a new project, built for the current macOS, with the pieces around the editor made new. The editor itself, the text view, the grammars, the scopes, is the one you know.
+The _tl;dr_ is that TextMate 2.1 is a fork of TextMate 2.0 that has updated for current macOS and Apple silicon (M-series or A-series chips).
 
-## Its own identity
+It's a new project and people. It's still TextMate at the core, namely text editor. But with the pieces around the editor made new. The editor itself, grammars, scopes, themes… are all largely unchanged.
 
-TextMate 2.1 is `com.textmate3.TextMate`, with its own preferences, its own Application Support directory and its own caches. It can be installed beside TextMate 2 and the two never touch. The first launch imports your preferences, your installed bundles and your session from TextMate 2, once, and leaves TextMate 2 as it was.
+## Its own identity in macOS
+
+TextMate 2.0 and lower are `com.macromates.TextMate`.
+TextMate 2.1 is `com.textmate3.TextMate`.
+Even though it's mostly the same app to you, it's a separate app to macOS' eyes.
+
+TextMate 2.1 has its own preferences, `Application Support` directory and caches. TextMate 2.1 can be installed beside TextMate 2.0 and the two never touch. The first launch of TextMate 2.1 imports your preferences, installed bundles, and session from TextMate 2.0. But only once. It leaves TextMate 2.0 as it was.
 
 ## Runtimes that arrive on their own
 
-Bundle commands run on a Ruby the release pins, 4.0.9, and on a Python the release pins, 3.14.9, found on your machine or installed for you through the runtime managers the Runtimes bundles carry, rv for Ruby and uv for Python. The system's copies are never used. When the application installs a runtime at launch, stands in with another version, or cannot find one, a strip above the text in every document window says so, until you dismiss it. [Runtimes](runtimes.md) has the whole arrangement.
+The app pins specific versions of Ruby and Python that get used by bundle commands. Ruby: 4.0.9. Python: 3.14.9. TextMate tries to find any already intalled `rv` or `uv` as the language version managers, and for installed versions of Ruby and Python. If any of the installed versions of `rv`, `uv`, Ruby, or Python what the apps wants, the app will use yours. If not, the app will download and install the versions it needs. TextMate 2.1 never ever uses system Ruby or system Python. Both are either don't come with macOS anymore or are way to old to be usable. A banner above the editor will notify you of any version mismatche problems. [Runtimes](runtimes.md) has the whole arrangement.
+
+## SwiftUI
+
+Many parts of the non-editor parts of the app are rewritten in SwiftUI. About, Preferences, Bundle Editor, Commit Message, Runner Output, et al. The core text editor view is not changed.
 
 ## The About window
 
-Every page of the About window is native: the release notes, the legal page, the recent changes to your installed bundles, and the contributions page listing every commit to the application's repository by everyone who made one, with the author linked to their GitHub profile and each commit to GitHub.
+The About window is native SwiftUI not a WebKit view of an HTML file. Release notes, legal acknowledgements, recent changes to your installed bundles, and contributions listing every commit to the application's repository.
 
-## Preferences
+## Settings / Preferences
 
-Every pane is new: Files, Projects, Bundles, Variables, Updates and Terminal. The Bundles pane is a sortable table of the catalog with a category bar and search, a check box per bundle that installs or uninstalls, and a spinner while an install is on its way. The Updates pane offers the update channel.
+Preferences is now called Settings in macOS. The Settings window is all new SwiftUI, but all of the same tabs as before: Files, Projects, Bundles, Variables, Updates and Terminal. And a new one: Runtimes.
 
 ## Update channels
 
-Every update is on one of three channels. Release reaches everyone. Beta is the nightlies, for anyone who wants to live on the edge. Alpha is for the development team. The Updates pane picks the channel.
+The app's software updates are available in three ways: alpha, beta, release.
+
+Alpha is mostly meant for people doing active development. Beta is meant for anyone who wants to live on the edge. Release is for everyone. Release is proper official releases. You can set which one you want in the Updates tab in Settings.
 
 ## The bundle editor edits forms
 
-Grammars, themes, preferences and macros are edited as forms rather than as property list text. A grammar shows its rules with the issues a validator finds, a theme shows the page, the gutter and every scoped entry with a live preview over a sample in a grammar you choose, a preferences item shows every setting the application reads grouped as the application groups them, and a macro shows its steps in play order with reorder and remove.
+Grammars, themes, preferences and macros are edited as forms rather than as property list text. A grammar shows its rules with the issues a validator finds. A theme shows the page, the gutter and every scoped entry with a live preview over a sample in a grammar you choose. A preferences item shows every setting the application reads grouped as the application groups them. A macro shows its steps in play order with reorder and remove.
 
 ## Signed, notarized, and updated
 
-Releases are Developer ID signed and notarized, and update through Sparkle from a feed the application verifies. Bundles install from a catalog whose index and every archive are signed with a key compiled into the application, so a modified bundle fails to install rather than installing.
+Releases are Developer ID signed and notarized. Software updates are built and managed with [Sparkle](https://sparkle-project.org). Updates via Sparkle from the `appcast.xml` feed are verified.
+
+Bundles install from a catalog whose index and every archive are signed with a key compiled into the application. A modified bundle fails to install rather than installing.
 
 ## The privileged helper
 
-Writing a file the application may not, one owned by root for instance, goes through a helper the system registers the first time it is needed, through the mechanism macOS provides for it, rather than through an installer run at launch.
+Writing files that are not owned by the user or that the application has permissions to (for example, files owned by root), now goes through a helper. The helper is registered by the system the first time it is needed through the mechanism that macOS provides for it, instead of through an installer run at launch.
 
 ## Smaller things worth knowing
 
 - Choosers remember a pick as soon as it is made, so the abbreviation memory survives a crash and does not grow without limit while the application runs.
-- Find in Project on a selection that holds a folder and something inside it searches the folder, not its parent.
+- `Find in Project` on a selection that holds a folder and something inside it searches the folder, not its parent.
 - A bundle command whose shebang names the system Ruby by its old framework path runs on the same Ruby every other Ruby command does.
-- A `TM_RUBY` naming a Ruby that is not there no longer breaks every Ruby command. The application refuses it, says why, and runs the command on the Ruby it pins.
+- A `TM_RUBY` set to a Ruby that is not there no longer breaks every Ruby command. The application rejects it, alerts you, and runs the command on the Ruby version pinned in the app.
+- ...
