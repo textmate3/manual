@@ -57,7 +57,7 @@ Will select from `quux` and down to just before `garply` like this:
 4:  xxxxxxx]garply
 ```
 
-This in itself may not seem like a useful feature, but once we have this (stream) selection, we can use *Edit → Select → Toggle Column Selection* (`⌥`) to turn it into a (zero-width) columnar selection. The option key (`⌥`) for this menu item means to press and quickly release the option key, don’t hold it down or press any other key.
+This in itself may not seem like a useful feature, but once we have this (stream) selection, we can use _Edit → Select → Toggle Column Selection_ (`⌥`) to turn it into a (zero-width) columnar selection. The option key (`⌥`) for this menu item means to press and quickly release the option key, don’t hold it down or press any other key.
 
 The result becomes:
 
@@ -104,7 +104,7 @@ Press `⌃⇧↓` to select the last argument, resulting in:
 someFunction(foo, bar[xxxxxxxxxx])
 ```
 
-It is also possible to use *Edit → Select → Enclosing Typing Pairs* (`⇧⌘B`) to extend the selection to include the immediate outer pairs defined, using that action would result in:
+It is also possible to use _Edit → Select → Enclosing Typing Pairs_ (`⇧⌘B`) to extend the selection to include the immediate outer pairs defined, using that action would result in:
 
 ```
 someFunction[xxxxxxxxxxxxxxxxxxxx]
@@ -125,15 +125,15 @@ When the paired characters are on their own lines, as is often the case with bra
 8:  }
 ```
 
-Using *Edit → Select → Enclosing Typing Pairs* (`⇧⌘B`) will fully select line 4, 5, and 6.
+Using _Edit → Select → Enclosing Typing Pairs_ (`⇧⌘B`) will fully select line 4, 5, and 6.
 
-Two convenient actions worth mentioning are *Bundles → Source → Wrap in Braces* ({) and *Bundles → Source → Unwrap Braces* (}). Both are only active when there is a selection, and they will wrap/unwrap and increase/decrease indent accordingly.
+Two convenient actions worth mentioning are _Bundles → Source → Wrap in Braces_ ({) and _Bundles → Source → Unwrap Braces_ (}). Both are only active when there is a selection, and they will wrap/unwrap and increase/decrease indent accordingly.
 
-Slightly related is *Bundles → Source → Strip Wrap Characters* (]). This action is also active only when there is a selection, and will strip the outer “wrap characters” of the selection, those could be parenthesis, quotes, or similar.
+Slightly related is _Bundles → Source → Strip Wrap Characters_ (]). This action is also active only when there is a selection, and will strip the outer “wrap characters” of the selection, those could be parenthesis, quotes, or similar.
 
 ### Bookmarks {#bookmarks}
 
-You can use *Navigate → Toggle Bookmark* (`⌘F2`) to add a remove a bookmark for the current line. Getting back to this bookmark is either done by cycling through bookmarks, using *Navigate → Next Bookmark* (F2) and *Navigate → Previous Bookmark* (`⇧F2`), or by finding the bookmark in the *Navigate → Go to Bookmark* submenu. This menu also allows you to clear all bookmarks for the current document.
+You can use _Navigate → Toggle Bookmark_ (`⌘F2`) to add a remove a bookmark for the current line. Getting back to this bookmark is either done by cycling through bookmarks, using _Navigate → Next Bookmark_ (F2) and _Navigate → Previous Bookmark_ (`⇧F2`), or by finding the bookmark in the _Navigate → Go to Bookmark_ submenu. This menu also allows you to clear all bookmarks for the current document.
 
 You may find that using function keys require the use of the `fn` modifier key. This can be changed at the Keyboard page in System Preferences.
 
@@ -141,7 +141,7 @@ You may find that using function keys require the use of the `fn` modifier key. 
 
 For languages that support it, the rightmost pop-up in the status bar shows the current “symbol” (often the function prototype or heading above the caret). This pop-up can be used to move the caret to another section of your document.
 
-For keyboard navigation there is also *Navigation → Go to Symbol…* (`⇧⌘T`) which opens a panel which supports filtering similar to the [file chooser]().
+For keyboard navigation there is also _Navigation → Go to Symbol…_ (`⇧⌘T`) which opens a panel which supports filtering similar to the [file chooser](<>).
 
 The panel can be left open and will update as the document is edited. If you single-click an item in the list, the caret will move to the symbol clicked. Double-clicking will do the same but closes the panel.
 
@@ -199,9 +199,9 @@ buttonMap = {
 }
 ```
 
-Another way to activate this mode is by placing the caret at the end of a line and then use *Text → Move Selection → Right* (`⌃⌘→`).
+Another way to activate this mode is by placing the caret at the end of a line and then use _Text → Move Selection → Right_ (`⌃⌘→`).
 
-To leave the mode, either use the mouse and click somewhere in the text (without holding down option) or use *Text → Move Selection → Left* (`⌃⌘←`) (without a selection).
+To leave the mode, either use the mouse and click somewhere in the text (without holding down option) or use _Text → Move Selection → Left_ (`⌃⌘←`) (without a selection).
 
 ## Selection {#selection}
 
@@ -219,41 +219,41 @@ For example given the following line:
 foo(baz, bar(qux, ‸quux, corge))
 ```
 
-If we wish to select `bar(qux, quux, corge)` we can do so by first choosing *Edit → Select → Enclosing Typing Pairs* (`⇧⌘B`). This will select `(qux, quux, corge)`. After this, we can extend the selection to either side, by using the appropriate arrow key. Here we wish to extend it to the left, so we use `⌥⇧←` to extend it by one word. Had we instead used `⇧→` then we would have extended the selection to the right, by adding the last `)` to the selection.
+If we wish to select `bar(qux, quux, corge)` we can do so by first choosing _Edit → Select → Enclosing Typing Pairs_ (`⇧⌘B`). This will select `(qux, quux, corge)`. After this, we can extend the selection to either side, by using the appropriate arrow key. Here we wish to extend it to the left, so we use `⌥⇧←` to extend it by one word. Had we instead used `⇧→` then we would have extended the selection to the right, by adding the last `)` to the selection.
 
 ### Unit Selections {#unit-selections}
 
-* Select → Word, Scope, Enclosing Typing Pairs
+- Select → Word, Scope, Enclosing Typing Pairs
 
 ### Column Selection {#column-selection}
 
-* *Edit → Select → Toggle Column Selection* (`⌥`).
+- _Edit → Select → Toggle Column Selection_ (`⌥`).
 
 ### Wrapping Selection {#wrapping-selection}
 
-* Paired characters, HTML tags
-* Wrapping/unwrapping braces
-* Stripping wrap characters (quotes, etc.)
+- Paired characters, HTML tags
+- Wrapping/unwrapping braces
+- Stripping wrap characters (quotes, etc.)
 
 ### Indenting Selection {#indenting-selection}
 
-* Increase, decrease, estimate
+- Increase, decrease, estimate
 
 ### Moving Selection {#moving-selection}
 
 ## Multiple Carets {#multiple-carets}
 
-* How to activate via: mouse, column selection + movement, column selection + unit selection, search actions, find next and extend selection
-* Behavior with multiple carets: find next, copy/paste, etc.
-* How to get back to a single caret
+- How to activate via: mouse, column selection + movement, column selection + unit selection, search actions, find next and extend selection
+- Behavior with multiple carets: find next, copy/paste, etc.
+- How to get back to a single caret
 
 ## Cut, Copy, and Paste {#cut-copy-and-paste}
 
-* Paste previous, next, and show clipboard history
-* Paste with/without re-indent
-* Configuring how to re-indent
-* Duplicating text (`⌃⇧D`)
-* Kill and yank
+- Paste previous, next, and show clipboard history
+- Paste with/without re-indent
+- Configuring how to re-indent
+- Duplicating text (`⌃⇧D`)
+- Kill and yank
 
 ## Buffer Completion {#buffer-completion}
 
@@ -276,32 +276,32 @@ See also: Completion Commands, character classes
 
 ## Macros {#macros}
 
-* Record, replay, and save
+- Record, replay, and save
 
 ## Auto-indenting Text {#auto-indenting-text}
 
-* How to configure
-* How to disable
-* Smart tab behavior
+- How to configure
+- How to disable
+- Smart tab behavior
 
 ## Transposing Text {#transposing-text}
 
-* `⌃T`: Swap characters / lines
-* `⌃T`: Reverse characters in line / lines in selection
-* `⌃T`: Cycle (swap) selected words
+- `⌃T`: Swap characters / lines
+- `⌃T`: Reverse characters in line / lines in selection
+- `⌃T`: Cycle (swap) selected words
 
 ## Spell Checking {#spell-checking}
 
-* Selecting spelling suggestions (`⌥F2`)
-* Disabling spell checking for scopes
-* Setting default language for folders/files
-* Correcting misspelled words (`⌥F2` or right-click)
+- Selecting spelling suggestions (`⌥F2`)
+- Disabling spell checking for scopes
+- Setting default language for folders/files
+- Correcting misspelled words (`⌥F2` or right-click)
 
 ## Shell Command Filters {#shell-command-filters}
 
-* Filtering through shell command (`⌘|`)
+- Filtering through shell command (`⌘|`)
 
 ## Dropping Items {#dropping-items}
 
-* Meaning of dragging (to document) with modifiers
-* See Also: Drag Commands
+- Meaning of dragging (to document) with modifiers
+- See Also: Drag Commands
