@@ -2,10 +2,10 @@
 
 ## File Settings {#file-settings}
 
-* `.tm_properties`
-* Recording defaults (`Global.tmProperties`)
-* Section selectors: scope selector or glob. Multiple values.
-* Precedence.
+- `.tm_properties`
+- Recording defaults (`Global.tmProperties`)
+- Section selectors: scope selector or glob. Multiple values.
+- Precedence.
 
 The grammar used to parse the `.tm_properties` files are as below. Whitespace (in the form of spaces or tabs) is allowed between elements.
 
@@ -25,24 +25,24 @@ comment:       '#' ( /[^\n]/ )*
 
 ### Filtering Files {#filtering-files}
 
-* File chooser
-* File browser
-* Folder search
+- File chooser
+- File browser
+- Folder search
 
 ## Scope Settings {#scope-settings}
 
-* Pattern based highlight pairs (for movement)
-* Indent based foldings
-* Character classes (for completion, word movement, etc.)
-* Indented soft wrap
+- Pattern based highlight pairs (for movement)
+- Indent based foldings
+- Character classes (for completion, word movement, etc.)
+- Indented soft wrap
 
 ## Hidden Settings {#hidden-settings}
 
-* line height, anti-alias, extended attributes, etc.
+- line height, anti-alias, extended attributes, etc.
 
 ## Key Bindings {#key-bindings}
 
-* Location of key binding files
-* Keybinding syntax
-* Indent aware movement actions
-* Find and extend selection actions
+- Location of key binding files
+- Keybinding syntax
+- Indent aware movement actions
+- Find and extend selection actions
