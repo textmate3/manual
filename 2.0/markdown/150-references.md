@@ -15,10 +15,10 @@ composite:    «expression» ([|&-] «expression»)*
 selector:     «composite» (',' «composite»)*
 ```
 
-* Left/right scope matching
-* Begin/end anchoring, ignoring attribute scopes
-* Wildcard matching
-* Descendent selector
+- Left/right scope matching
+- Begin/end anchoring, ignoring attribute scopes
+- Wildcard matching
+- Descendent selector
 
 ## Format String {#format-string}
 
@@ -39,7 +39,7 @@ ${«var»:[/upcase][/downcase][/capitalize][/asciify]}
 \t, \r, \n, \x{HHHH}, \xHH
 ```
 
-* Used for: grammar names, `.tm_properties` values, Preferences → Variables, replacement strings
+- Used for: grammar names, `.tm_properties` values, Preferences → Variables, replacement strings
 
 For nested replacements, use named captures as variables are inherited.
 
@@ -83,7 +83,7 @@ Makefile
 
 ¹ The asterisk will not match slashes nor a leading period.
 
-* Used in `.tm_properties`, find in folder
+- Used in `.tm_properties`, find in folder
 
 ## Selection String {#selection-string}
 
@@ -98,7 +98,7 @@ column       = [1-9][0-9]*
 offset       = [1-9][0-9]*
 ```
 
-This can be used with `mate -l`, *Go to Line…*, and the `⌘T` dialog (by putting `:«selection string»` after the file name) — as for the latter, if a string on the find clipboard has this format, it will be the default value in `⌘T`, this is useful if you have a line in Terminal like:
+This can be used with `mate -l`, _Go to Line…_, and the `⌘T` dialog (by putting `:«selection string»` after the file name) — as for the latter, if a string on the find clipboard has this format, it will be the default value in `⌘T`, this is useful if you have a line in Terminal like:
 
 ```
 main.cc:32: warning: no return statement.
