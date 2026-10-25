@@ -2,14 +2,14 @@
 
 The primary search actions which you should learn the key equivalents for are:
 
-* *Edit → Find → Find Next* (`⌘G`)
-* *Edit → Find → Find Previous* (`⇧⌘G`)
-* *Edit → Find → Show History* (`⌃⌥⌘F`)
-* *Edit → Find → Use Selection for Find* (`⌘E`)
+- _Edit → Find → Find Next_ (`⌘G`)
+- _Edit → Find → Find Previous_ (`⇧⌘G`)
+- _Edit → Find → Show History_ (`⌃⌥⌘F`)
+- _Edit → Find → Use Selection for Find_ (`⌘E`)
 
-Another action is *Bundles → Text → Selecting → Extend Selection to Include Next* (`⌃W`), more detail about this action can be found in the [search clipboard](searching.html#search-clipboard) section below.
+Another action is _Bundles → Text → Selecting → Extend Selection to Include Next_ (`⌃W`), more detail about this action can be found in the [search clipboard](searching.html#search-clipboard) section below.
 
-TextMate’s search dialog can be brought up by selecting *Edit → Find → Find…* (`⌘F`). Once this dialog is showing the *Edit → Find → Find All* (`⌥⌘F`) menu item will trigger the `Find All` button in the search dialog and show you all results from the current document. When the search dialog is not showing, the same action will instead select all matches in the current document.
+TextMate’s search dialog can be brought up by selecting _Edit → Find → Find…_ (`⌘F`). Once this dialog is showing the _Edit → Find → Find All_ (`⌥⌘F`) menu item will trigger the `Find All` button in the search dialog and show you all results from the current document. When the search dialog is not showing, the same action will instead select all matches in the current document.
 
 If you wish to search for tab or newline characters then you can press option-tab or option-newline to insert these in the search or replace fields. The fields will automatically grow with their content.
 
@@ -17,9 +17,9 @@ The sigma button (`Σ`) in the search dialog can be used to count the number of 
 
 ## Folder Search {#folder-search}
 
-You can select *Edit ⇢ Find → Find in Project…* (`⇧⌘F`) to bring up the search dialog with the `In` pop-up defaulting to the current project folder. You can also click the magnifying glass in the file browser to open a search dialog pointing to the file browser’s [effective folder](projects.html#effective-folder), or switch focus to the file browser before pressing `⇧⌘F`.
+You can select _Edit ⇢ Find → Find in Project…_ (`⇧⌘F`) to bring up the search dialog with the `In` pop-up defaulting to the current project folder. You can also click the magnifying glass in the file browser to open a search dialog pointing to the file browser’s [effective folder](projects.html#effective-folder), or switch focus to the file browser before pressing `⇧⌘F`.
 
-Should you wish to extend the search to a parent folder then you can use *Go → Enclosing Folder* (`⌘↑`) or interact with the `In` pop-up menu.
+Should you wish to extend the search to a parent folder then you can use _Go → Enclosing Folder_ (`⌘↑`) or interact with the `In` pop-up menu.
 
 When the `In` pop-up is showing a folder you can select `Find All` to perform a search across the files in the selected folder.
 
@@ -37,13 +37,13 @@ After a folder search you will see the results grouped by file. There are a few 
 
 Using command `⌘1`-`⌘n` will select the first result in the n’th file. It will also move focus to the results list, allowing you to use arrow up and down to move through the results.
 
-Using *Edit → Find → Find Next* (`⌘G`) will select the first result, and subsequent uses will advance through the results. Likewise *Edit → Find → Find Previous* (`⇧⌘G`) will initially select the last result and move backwards through the results.
+Using _Edit → Find → Find Next_ (`⌘G`) will select the first result, and subsequent uses will advance through the results. Likewise _Edit → Find → Find Previous_ (`⇧⌘G`) will initially select the last result and move backwards through the results.
 
-If you close the search dialog and use *Edit → Find → Find Next* (`⌘G`) in a document with no more results, TextMate will open the next file which have results and select the first result in this file.
+If you close the search dialog and use _Edit → Find → Find Next_ (`⌘G`) in a document with no more results, TextMate will open the next file which have results and select the first result in this file.
 
-From the gear menu in the find dialog you can select *Collapse Results* (`⌥⌘1`). This is useful when you are only interested in which files contain matches and not the matches themselves.
+From the gear menu in the find dialog you can select _Collapse Results_ (`⌥⌘1`). This is useful when you are only interested in which files contain matches and not the matches themselves.
 
-Also in the gear menu are actions for copying the results to the clipboard. You can copy just the matching parts or the entire line with the match, either with or without file name. The first option, copying matching parts, is useful for [regular expression](references.html#regular-expression) searches, for example a project search for `href=".*?"` followed by *Copy Matching Parts* will provide you with a list of all links across all files. You can paste that into a new document and use *Bundles → Text → Sorting → Sort Documents & Remove Duplicates* (F5) to remove duplicates.
+Also in the gear menu are actions for copying the results to the clipboard. You can copy just the matching parts or the entire line with the match, either with or without file name. The first option, copying matching parts, is useful for [regular expression](references.html#regular-expression) searches, for example a project search for `href=".*?"` followed by _Copy Matching Parts_ will provide you with a list of all links across all files. You can paste that into a new document and use _Bundles → Text → Sorting → Sort Documents & Remove Duplicates_ (F5) to remove duplicates.
 
 ## Replacing {#replacing}
 
@@ -55,44 +55,44 @@ For results that you do not wish to have replaced, uncheck the check box next to
 
 ## Search Clipboard {#search-clipboard}
 
-Similar to how you can copy text to the clipboard with *Edit → Copy* (`⌘C`) and paste it later with *Edit → Paste* (`⌘V`) you can use *Edit → Find → Use Selection for Find* (`⌘E`) to place the current selection on the (globally shared) search clipboard and use *Edit → Find → Find Next* (`⌘G`) or *Edit → Find → Find Previous* (`⇧⌘G`) to find the next or previous occurrence of the search string.
+Similar to how you can copy text to the clipboard with _Edit → Copy_ (`⌘C`) and paste it later with _Edit → Paste_ (`⌘V`) you can use _Edit → Find → Use Selection for Find_ (`⌘E`) to place the current selection on the (globally shared) search clipboard and use _Edit → Find → Find Next_ (`⌘G`) or _Edit → Find → Find Previous_ (`⇧⌘G`) to find the next or previous occurrence of the search string.
 
-The content of the search clipboard is also used when opening the find dialog using *Edit → Find → Find…* (`⌘F`).
+The content of the search clipboard is also used when opening the find dialog using _Edit → Find → Find…_ (`⌘F`).
 
-TextMate maintains a history of your previous search strings and you can select *Edit → Find → Show History* (`⌃⌥⌘F`) to see previous search strings. If you close the list with return (`↩`) then TextMate will search for the next occurrence of the selected string, whereas closing the list with escape (`⎋`) will change the current string on the search clipboard but not perform a search.
+TextMate maintains a history of your previous search strings and you can select _Edit → Find → Show History_ (`⌃⌥⌘F`) to see previous search strings. If you close the list with return (`↩`) then TextMate will search for the next occurrence of the selected string, whereas closing the list with escape (`⎋`) will change the current string on the search clipboard but not perform a search.
 
-In addition to placing selection on the search clipboard, you can also use *Edit → Find → Use Selection for Replace* (`⇧⌘E`). This is useful if you want to perform a replacement and bypass the search dialog. The steps would be:
+In addition to placing selection on the search clipboard, you can also use _Edit → Find → Use Selection for Replace_ (`⇧⌘E`). This is useful if you want to perform a replacement and bypass the search dialog. The steps would be:
 
 1. Select the string you wish to replace and press `⌘E`.
 1. Overtype the selection with the replacement, select it, and press `⇧⌘E`.
 
-After this you can use *Edit → Find → Replace All* (`⌃⌘G`), make a selection and use *Edit → Find → Replace All in Selection* (`⌃⇧⌘G`), or possibly *Edit → Find → Replace and Find* (`⌥⌘G`)
+After this you can use _Edit → Find → Replace All_ (`⌃⌘G`), make a selection and use _Edit → Find → Replace All in Selection_ (`⌃⇧⌘G`), or possibly _Edit → Find → Replace and Find_ (`⌥⌘G`)
 
-If you wish to replace only a few instances near the caret, it might be easier to select the first match and then use *Bundles → Text → Selecting → Extend Selection to Include Next* (`⌃W`). This action will make the next occurrence of the currently selected string part of the selection, causing multiple occurrences to be selected. Use it to select all the occurrences you wish to replace, and then perform your replacement, as the changes you do to the first occurrence will be mirrored to all the other occurrences.
+If you wish to replace only a few instances near the caret, it might be easier to select the first match and then use _Bundles → Text → Selecting → Extend Selection to Include Next_ (`⌃W`). This action will make the next occurrence of the currently selected string part of the selection, causing multiple occurrences to be selected. Use it to select all the occurrences you wish to replace, and then perform your replacement, as the changes you do to the first occurrence will be mirrored to all the other occurrences.
 
-With no selection the action is *Edit → Select → Word* (`⌃W`) which means that for single word replacements you only need to place the caret on the word to be replaced and then press `⌃W` until all the occurrences are selected.
+With no selection the action is _Edit → Select → Word_ (`⌃W`) which means that for single word replacements you only need to place the caret on the word to be replaced and then press `⌃W` until all the occurrences are selected.
 
 ## Search Options {#search-options}
 
-Four options affect how the search works, these can be toggled either via the *Edit* menu or in the find dialog.
+Four options affect how the search works, these can be toggled either via the _Edit_ menu or in the find dialog.
 
 The options are as follows:
 
-| Name | Key Equivalent | Explanation |
-| --- | --- | --- |
-| Ignore Case | `⌥⌘C` | Perform a case insensitive search. |
-| Regular Expression | `⌥⌘R` | Treat the search string as a *regular expression*. |
-| Ignore Whitespace |  | Whitespace in the document and search string is ignored. This makes it easy to search for multi-line content regardless of its indentation. |
-| Wrap Around | `⌥⌘A` | Start over from the top of the document when no match is found. |
+| Name               | Key Equivalent | Explanation                                                                                                                                 |
+| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ignore Case        | `⌥⌘C`          | Perform a case insensitive search.                                                                                                          |
+| Regular Expression | `⌥⌘R`          | Treat the search string as a _regular expression_.                                                                                          |
+| Ignore Whitespace  |                | Whitespace in the document and search string is ignored. This makes it easy to search for multi-line content regardless of its indentation. |
+| Wrap Around        | `⌥⌘A`          | Start over from the top of the document when no match is found.                                                                             |
 
 ## Incremental Search {#incremental-search}
 
-Selecting *Edit → Find → Incremental Search* (`⌃S`) will open a search field at the bottom of the window where a search string can be entered, and TextMate will show what it matches in the document. The search is case-insensitive and ignores whitespace.
+Selecting _Edit → Find → Incremental Search_ (`⌃S`) will open a search field at the bottom of the window where a search string can be entered, and TextMate will show what it matches in the document. The search is case-insensitive and ignores whitespace.
 
 While the search field is showing you can use the following key equivalents:
 
-| Key Equivalent | Action |
-| --- | --- |
-| `⌃S` `⇥` | Find next |
-| `⌃⇧S` `⇧⇥` | Find previous |
-| `↩` `⎋` | Close search field |
+| Key Equivalent | Action             |
+| -------------- | ------------------ |
+| `⌃S` `⇥`       | Find next          |
+| `⌃⇧S` `⇧⇥`     | Find previous      |
+| `↩` `⎋`        | Close search field |
