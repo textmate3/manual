@@ -1,9 +1,9 @@
-# Variables
+# Variables {#variables}
 
-## Static Variables
+## Static Variables {#static-variables}
 
-## File Variables
+## File Variables {#file-variables}
 
-## Scope Variables
+## Scope Variables {#scope-variables}
 
-## Dynamic Variables
+## Dynamic Variables {#dynamic-variables}
