@@ -1,12 +1,12 @@
 # HTML Output {#html-output}
 
-* Searching via `⌘F` (works)
-* Clipboard history (also applies to HTML output)
-* See also: [Printing Processed Output](printing.html#printing-processed-output).
+- Searching via `⌘F` (works)
+- Clipboard history (also applies to HTML output)
+- See also: [Printing Processed Output](printing.html#printing-processed-output).
 
 ## HTML Output Theme {#html-output-theme}
 
-* Themes bundle, `TM_THEME_PATH`.
+- Themes bundle, `TM_THEME_PATH`.
 
 ## JavaScript API {#javascript-api}
 
