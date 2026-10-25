@@ -1,38 +1,38 @@
 # Bundles {#bundles}
 
-* Installing bundles (Preferences → Bundles)
-* Locations and delta format
-* Distributing bundles
-* Getting your bundle added to the index
-* Reverting to default bundles
+- Installing bundles (Preferences → Bundles)
+- Locations and delta format
+- Distributing bundles
+- Getting your bundle added to the index
+- Reverting to default bundles
 
 ## Finding Bundle Items {#finding-bundle-items}
 
-* Title/key equivalent search (`⌃⌘T`)
-* Editing found item (`⌥↩`)
+- Title/key equivalent search (`⌃⌘T`)
+- Editing found item (`⌥↩`)
 
 ## General Actions {#general-actions}
 
-* Diff actions
-* Math actions
-* TODO actions
-* Paste Online
-* Sorting
-* See Also: Version Control
+- Diff actions
+- Math actions
+- TODO actions
+- Paste Online
+- Sorting
+- See Also: Version Control
 
 ## Source Actions {#source-actions}
 
-* Build/Run: Running untitled documents (`⌘B`/`⌘R`)
-* Documentation for Word (`⌃H`)
-* Validate Syntax (`⌃⇧V`)
-* Commenting/uncommenting: How to configure
-* Toggle single/double quotes or `camelCase`/`snake_case`
-* Aligning assignments
-* Insert line-terminator and/or newline
+- Build/Run: Running untitled documents (`⌘B`/`⌘R`)
+- Documentation for Word (`⌃H`)
+- Validate Syntax (`⌃⇧V`)
+- Commenting/uncommenting: How to configure
+- Toggle single/double quotes or `camelCase`/`snake_case`
+- Aligning assignments
+- Insert line-terminator and/or newline
 
 ## Bundle Editor {#bundle-editor}
 
-* How to create new items: `⌘N`
+- How to create new items: `⌘N`
 
 ## Tab Trigger {#tab-trigger}
 
@@ -40,8 +40,8 @@
 
 ## Requirements {#requirements}
 
-* Requiring shell commands
-* Requiring other bundles
+- Requiring shell commands
+- Requiring other bundles
 
 The following can be added to a bundle item (setting it for a bundle’s `info.plist` is equivalent to setting it for each item in that bundle):
 
